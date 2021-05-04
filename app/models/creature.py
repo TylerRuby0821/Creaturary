@@ -7,7 +7,7 @@ class Creature(db.model):
   id = db.Column(db.Integer, primary_key= True)
   name = db.Column(db.String, nullable=False)
   description = db.Column(db.Text, nullable=False)
-  tag_id = db.Column(db.Integer, nullable=False)
+  tag_id = db.Column(db.Integer, db.ForeignKey('tags.id'), nullable=False)
   created_at = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
   updated_at = db.Column(db.DateTime, default=datetime.utcnow, onupdate=datetime.utcnow, nullable=False)
 
