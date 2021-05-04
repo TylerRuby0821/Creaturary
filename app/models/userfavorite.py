@@ -1,7 +1,7 @@
 from .db import db
 from datetime import datetime
 
-class Userfavorite(db.model):
+class Userfavorite(db.Model):
   __tablename__ = 'user_favorites'
 
   id = db.Column(db.Integer, primary_key= True)

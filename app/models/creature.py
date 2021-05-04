@@ -1,7 +1,7 @@
 from .db import db
 from datetime import datetime
 
-class Creature(db.model):
+class Creature(db.Model):
   __tablename__ = 'creatures'
 
   id = db.Column(db.Integer, primary_key= True)

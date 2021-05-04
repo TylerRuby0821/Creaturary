@@ -2,7 +2,7 @@ from .db import db
 from datetime import datetime
 
 
-class Tag(db.model):
+class Tag(db.Model):
   __tablename__ = 'tags'
 
   id = db.Column(db.Integer, primary_key= True)
