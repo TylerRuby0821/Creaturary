@@ -1,0 +1,42 @@
+.navbar__container{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.navbar__header--container{
+  width: 33%;
+}
+
+.navbar__search--container{
+  width: 33%;
+}
+
+.navbar__user--container{
+  width: 33%;
+}
+.navbar__header{
+  font-size: 40px;
+  /* font-weight: 700; */
+  font-family: 'Creepster', cursive;
+  /* margin-top: 200px; */
+  /* margin-bottom: 30px; */
+  margin-left: 40px;
+  /* margin-top: 10px; */
+  text-shadow: 2px 2px rgb(170, 13, 13);
+  box-sizing: border-box;
+}
+
+.navbar__username{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  font-family: 'Creepster', cursive;
+  text-shadow: 1px 1px rgb(170, 13, 13);
+  margin-left: 160px;
+}
+
+.fas.fa-cog{
+  color: white;
+}

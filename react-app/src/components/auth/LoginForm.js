@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { login } from "../../store/session";
+import { authenticate, login } from "../../store/session";
 import './LoginForm.css'
 
 const LoginForm = ({ authenticated, setAuthenticated }) => {
@@ -15,7 +15,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     e.preventDefault();
     const user = await dispatch(login(email, password));
     if (!user.errors) {
-      setAuthenticated(true);
+      dispatch(authenticate(user))
     } else {
       setErrors(user.errors);
     }
@@ -25,7 +25,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     e.preventDefault();
     const user = await dispatch(login('demo@aa.io','password'))
     if (!user.errors) {
-      setAuthenticated(true);
+      dispatch(authenticate(user))
     } else {
       setErrors(user.errors);
     }
@@ -39,7 +39,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
-  if (authenticated) {
+  if (user) {
     return <Redirect to="/creatures" />;
   }
 

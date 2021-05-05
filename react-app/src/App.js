@@ -1,27 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import NavBar from "./components/NavBar";
-import ProtectedRoute from "./components/auth/ProtectedRoute";
-import UsersList from "./components/UsersList";
-import User from "./components/User";
-import { authenticate } from "./services/auth";
+import { authenticate } from "./store/session";
 import LandingPage from './components/LandingPage/LandingPage'
+import MainPage from './components/MainPage/MainPage'
 
 function App() {
-  const [authenticated, setAuthenticated] = useState(false);
+  const dispatch = useDispatch()
   const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     (async() => {
-      const user = await authenticate();
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
+      await dispatch(authenticate())
       setLoaded(true);
     })();
-  }, []);
+  }, [dispatch]);
 
   if (!loaded) {
     return null;
@@ -29,26 +24,20 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar setAuthenticated={setAuthenticated} />
+      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
       <Switch>
         <Route path="/" exact={true}>
           <LandingPage />
         </Route>
         <Route path="/login" exact={true}>
-          <LoginForm
-            authenticated={authenticated}
-            setAuthenticated={setAuthenticated}
-          />
+          <LoginForm />
         </Route>
         <Route path="/sign-up" exact={true}>
-          <SignUpForm authenticated={authenticated} setAuthenticated={setAuthenticated} />
+          <SignUpForm />
         </Route>
-        <ProtectedRoute path="/users" exact={true} authenticated={authenticated}>
-          <UsersList/>
-        </ProtectedRoute>
-        <ProtectedRoute path="/users/:userId" exact={true} authenticated={authenticated}>
-          <User />
-        </ProtectedRoute>
+        <Route path="/creatures" exact={true}>
+          <MainPage />
+        </Route>
       </Switch>
     </BrowserRouter>
   );
