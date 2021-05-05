@@ -23,13 +23,14 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   const handleDemo = async (e) => {
     e.preventDefault();
-    const user = await login({email:'demo@aa.io', password:'password'})
+    const user = await dispatch(login('demo@aa.io','password'))
     if (!user.errors) {
       setAuthenticated(true);
     } else {
       setErrors(user.errors);
     }
   }
+
   const updateEmail = (e) => {
     setEmail(e.target.value);
   };
@@ -44,15 +45,17 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
 
   return (
     <div className='login__container'>
-      <form onSubmit={onLogin}>
+      <div className='login__header'><NavLink className='login__header' to='/'>Creaturary</NavLink></div>
+      <form className='login__form' onSubmit={onLogin}>
         <div>
           {errors.map((error) => (
             <div>{error}</div>
           ))}
         </div>
         <div>
-          <label htmlFor="email">Email</label>
+          {/* <label htmlFor="email">Email</label> */}
           <input
+            className='login__form--input'
             name="email"
             type="text"
             placeholder="Email"
@@ -61,17 +64,21 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
+          {/* <label htmlFor="password">Password</label> */}
           <input
+            className='login__form--input pass'
             name="password"
             type="password"
             placeholder="Password"
             value={password}
             onChange={updatePassword}
           />
-          <button type="submit">Login</button>
-          <button type='submit' onClick={handleDemo}>Login as Demo</button>
+          <div className='login__form--buttons'>
+            <button className='login__form--button' type="submit">Login</button>
+            <button className='login__form--button' type='submit' onClick={handleDemo}>Demo</button>
+          </div>
         </div>
+        <div className='login__form--nav'> Dont have an account? <NavLink className='login__nav--button' to='/sign-up'>Sign Up Here</NavLink></div>
       </form>
     </div>
   );

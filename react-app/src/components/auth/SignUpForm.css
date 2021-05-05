@@ -1,8 +1,8 @@
-.login__container{
+.signup__container{
   text-align: center;
 }
 
-.login__header{
+.signup__header{
   font-size: 115px;
   font-weight: 700;
   font-family: 'Creepster', cursive;
@@ -13,34 +13,20 @@
   color: black;
 }
 
-.login__form{
+.signup__form{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.login__form--input{
+.signup__form--input{
   height: 25px;
   width: 160px;
   margin: 10px 0px;
   border-radius: 7px;
-
 }
 
-.login__form--input.pass{
-  margin-bottom: 30px;
-}
-
-.login__form--buttons{
-  display: flex;
-  flex-direction: column;
-  /* height: 20px; */
-  /* width: 160px; */
-
-
-}
-
-.login__form--button{
+.signup__form--button{
   margin-bottom: 10px;
   margin-left: 30px;
   cursor: pointer;
@@ -58,15 +44,14 @@
   font-size: 18px;
 }
 
-
-.login__form--nav{
+.signup__form--nav{
   margin-top: 80px;
   text-decoration: none;
   font-family: 'Itim', cursive;
   font-size: 22px;
 }
 
-.login__nav--button{
+.signup__nav--button{
   display: flex;
   justify-content: center;
   align-items: center;
