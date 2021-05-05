@@ -1,0 +1,56 @@
+.landing__container{
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  text-align: center;
+}
+
+.landing__header{
+  font-size: 115px;
+  font-weight: 700;
+  font-family: 'Creepster', cursive;
+  margin-top: 200px;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px rgb(170, 13, 13);  /*May remove depending on font family*/
+}
+
+.landing__subheader{
+  font-size: 44px;
+  font-family: 'Itim', cursive;
+  text-shadow: 1px 1px rgb(170, 13, 13);
+}
+
+.landing__nav--container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.landing__login--nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  margin-right: 30px;
+  text-decoration: none;
+  border-radius: 7%;
+  background-color: rgba(170, 13, 13, .8);
+  color: white;
+  font-family: 'Itim', cursive;
+}
+
+.landing__signup--nav{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  width: 100px;
+  text-decoration: none;
+  border-radius: 7%;
+  background-color: rgba(170, 13, 13, .8);
+  text-align: center;
+  color: white;
+  font-family: 'Itim', cursive;
+}
