@@ -54,3 +54,16 @@
   color: black;
   /* text-shadow: 1px 1px rgb(219, 215, 215); */
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.usermenu{
+  position: absolute;
+  /* height: 100px; */
+  /* width: 100px; */
+  top: 40px;
+  right: 10px;
+  /* background: aliceblue; */
+}
