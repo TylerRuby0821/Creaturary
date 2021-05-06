@@ -13,6 +13,12 @@ const MainPage = () => {
       {(user) ?
         <div className='main__container'>
           <Navigation />
+          <div className='positional__helper'>
+            <div className='main__search--container'>
+              <p className='main__search--header'>Peak behind the curtain...</p>
+              <input className='main__search--input'></input>
+            </div>
+          </div>
           <div className='main__body'>
             <div className='main__body--lore'>
               <i class="fas fa-book"></i>

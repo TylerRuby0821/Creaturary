@@ -1,7 +1,14 @@
+.main_container{
+  overflow: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+
 .main__body{
   height: 100vh;
   width: 100vw;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   text-align: center;
   align-items: center;
@@ -9,13 +16,18 @@
   top: 100px; */
 }
 
+
+
 .main__body--az{
+  display: block;
 }
 
 .main__body--lore{
+  display: block;
 }
 
 .main__body--custom{
+  display: block;
 }
 
 .fa-book{
@@ -36,4 +48,36 @@
   cursor: pointer;
   color: black;
   text-shadow: 1px 1px rgb(187, 180, 180);
+}
+
+.main__search--container{
+  position: relative;
+  top: 30px;
+}
+
+.positional__helper{
+  /* position: relative;
+  top: 100px;
+  left: 650px; */
+  /* height: 100vh; */
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  position: absolute;
+  top: 100px;
+}
+
+.main__search--input{
+  height: 30px;
+  width: 300px;
+  border-radius: 9%;
+}
+
+.main__search--header{
+  font-size: 60px;
+  font-family: 'Itim', cursive;
+  margin-bottom: 30px;
 }
