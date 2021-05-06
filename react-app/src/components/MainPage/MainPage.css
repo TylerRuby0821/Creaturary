@@ -2,4 +2,38 @@
   height: 100vh;
   width: 100vw;
   display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  /* position: absolute;
+  top: 100px; */
+}
+
+.main__body--az{
+}
+
+.main__body--lore{
+}
+
+.main__body--custom{
+}
+
+.fa-book{
+  font-size: 120px;
+  color: gray;
+  cursor: pointer;
+  position: relative;
+  margin: 30px;
+}
+
+.book__text{
+  font-size: 20px;
+  font-weight: 700;
+  font-style: italic;
+  position: relative;
+  bottom: 85px;
+  font-family: 'Itim', cursive;
+  cursor: pointer;
+  color: black;
+  text-shadow: 1px 1px rgb(187, 180, 180);
 }
