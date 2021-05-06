@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './Navigation.css'
 import { useSelector } from 'react-redux'
 import UserMenu from '../UserMenu/UserMenu'
+import { NavLink } from 'react-router-dom';
 
 const Navigation = () => {
 
@@ -16,7 +17,7 @@ const Navigation = () => {
   return (
     <div className='navbar__container'>
       <div className='navbar__header--container'>
-        <h1 className='navbar__header'>Creaturary</h1>
+        <h1 className='navbar__header'><NavLink className='navbar__header' to='/creatures'>Creaturary</NavLink></h1>
       </div>
       <div className='navbar__search--container'>
         {/* Search Bar Here */}
