@@ -18,16 +18,16 @@
 
 
 
-.main__body--az{
-  display: block;
+.main__body--az:hover > .fa-book{
+  text-shadow: 2px 5px 10px rgb(247, 244, 244);
 }
 
-.main__body--lore{
-  display: block;
+.main__body--lore:hover > .fa-book{
+  text-shadow: 2px 5px 10px rgb(247, 244, 244);
 }
 
-.main__body--custom{
-  display: block;
+.main__body--custom:hover > .fa-book{
+  text-shadow: 2px 5px 10px rgb(247, 244, 244);
 }
 
 .fa-book{
@@ -38,6 +38,9 @@
   margin: 30px;
 }
 .fa-book:hover{
+  text-shadow: 2px 5px 10px rgb(247, 244, 244);
+}
+.book__text:hover + .fa-book{
   text-shadow: 2px 5px 10px rgb(247, 244, 244);
 }
 

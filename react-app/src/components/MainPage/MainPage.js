@@ -9,7 +9,7 @@ const MainPage = () => {
   const user = useSelector(state => state.session.user)
 
   const handleLore = () => {
-
+    // const results = 
   }
 
   const handleAz = () => {
