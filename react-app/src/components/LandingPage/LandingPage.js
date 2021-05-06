@@ -1,8 +1,15 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
 import './LandingPage.css'
 
 const LandingPage = () => {
+  const user = useSelector(state => state.session.user);
+
+  if (user) {
+    return <Redirect to="/creatures" />;
+  }
+
   return (
     <div className='landing__container'>
       <h1 className='landing__header'>Creaturary</h1>
