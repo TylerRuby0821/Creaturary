@@ -37,6 +37,9 @@
   position: relative;
   margin: 30px;
 }
+.fa-book:hover{
+  text-shadow: 2px 5px 10px rgb(247, 244, 244);
+}
 
 .book__text{
   font-size: 20px;
@@ -44,7 +47,7 @@
   font-style: italic;
   position: relative;
   bottom: 85px;
-  font-family: 'Itim', cursive;
+  font-family: 'Girassol', cursive;
   cursor: pointer;
   color: black;
   text-shadow: 1px 1px rgb(187, 180, 180);
@@ -73,11 +76,14 @@
 .main__search--input{
   height: 30px;
   width: 300px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px red;
   border-radius: 9%;
 }
 
 .main__search--header{
   font-size: 60px;
-  font-family: 'Itim', cursive;
+  font-family: 'Girassol', cursive;
   margin-bottom: 30px;
+  text-shadow: 2px 2px rgb(170, 13, 13);
 }

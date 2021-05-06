@@ -8,6 +8,18 @@ const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
 
+  const handleLore = () => {
+
+  }
+
+  const handleAz = () => {
+
+  }
+
+  const handleCustom = () => {
+
+  }
+
   return (
     <div>
       {(user) ?
@@ -21,15 +33,15 @@ const MainPage = () => {
           </div>
           <div className='main__body'>
             <div className='main__body--lore'>
-              <i class="fas fa-book"></i>
+              <i onClick={handleLore} class="fas fa-book"></i>
               <div className='book__text'>Lore</div>
             </div>
             <div className='main__body--az'>
-              <i class="fas fa-book"></i>
+              <i onClick={handleAz} class="fas fa-book"></i>
               <div className='book__text'>A-Z</div>
             </div>
             <div className='main__body--custom'>
-              <i class="fas fa-book"></i>
+              <i onClick={handleCustom} class="fas fa-book"></i>
               <div className='book__text'>Custom</div>
             </div>
           </div>
