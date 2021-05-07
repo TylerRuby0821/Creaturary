@@ -26,7 +26,8 @@
   text-overflow: ellipsis; */
   border: solid 1px black;
   background-color: grey;
-  border-radius: 3%;
+  border-radius: 7px;
+  box-shadow: 1px 1px 1px red;
 }
 
 .result__link{
@@ -37,11 +38,15 @@
 .result__name{
   font-size: 22px;
   font-weight: 700;
+  font-family: 'Creepster', cursive;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px rgb(170, 13, 13);
 }
 
 .result__description{
   height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-family: 'Girassol', cursive;
+  font-weight: 500;
 }
-
