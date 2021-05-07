@@ -32,7 +32,7 @@ const createCreaturesAction = (creature) => ({
 
 
 export const getCreatures = () => async (dispatch) => {
-  console.log('Before')
+  // console.log('Before')
   const response = await fetch('/api/creatures/')
   const data = await response.json()
   dispatch(getCreaturesAction(data.creatures))

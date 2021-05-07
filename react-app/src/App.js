@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch, useParams } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import { authenticate } from "./store/session";
 import LandingPage from './components/LandingPage/LandingPage'
 import MainPage from './components/MainPage/MainPage'
 import Creature from "./components/Creature/Creature";
+import {getCreatures} from './store/creature'
 
 function App() {
   const dispatch = useDispatch()
   const [loaded, setLoaded] = useState(false);
-  const [creature, setCreature] = useState()
+  const [creatures, setCreatures] = useState({})
+
+  useEffect(() => {
+    dispatch(getCreatures())
+  }, [creatures, dispatch])
+
   useEffect(() => {
     (async() => {
       await dispatch(authenticate())
@@ -22,6 +28,8 @@ function App() {
   if (!loaded) {
     return null;
   }
+
+
 
 
   return (
@@ -41,7 +49,7 @@ function App() {
           <MainPage />
         </Route>
         <Route path="/creatures/:creatureId" exact={true}>
-          <Creature creature={creature}/>
+          <Creature />
         </Route>
       </Switch>
     </BrowserRouter>

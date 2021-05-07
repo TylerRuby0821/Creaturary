@@ -9,14 +9,8 @@ const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
   const [search, setSearch] = useState('')
-  const [creatures, setCreatures] = useState({})
   const dispatch = useDispatch()
 
-  useEffect(() => {
-
-    dispatch(getCreatures())
-    
-  }, [creatures, dispatch])
 
   return (
     <div>
@@ -30,7 +24,8 @@ const MainPage = () => {
                 <input
                   className='main__search--input'
                   placeholder='Search...'
-                  value={(e) => setSearch(e.target.value)}
+                  value=''
+                  onChange={(e) => setSearch(e.target.value)}
                   ></input>
               </form>
             </div>
