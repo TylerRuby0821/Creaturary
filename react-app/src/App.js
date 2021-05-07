@@ -33,8 +33,6 @@ function App() {
   }
 
 
-
-
   return (
     <BrowserRouter>
       {/* <NavBar setAuthenticated={setAuthenticated} /> */}

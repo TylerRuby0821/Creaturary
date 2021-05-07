@@ -17,7 +17,7 @@ const MainPage = () => {
       {(user) ?
         <div className='main__container'>
           <Navigation />
-          <div className='positional__helper'>
+          {/* <div className='positional__helper'> */}
             <div className='main__search--container'>
               <p className='main__search--header'>Peak behind the curtain...</p>
               <form >
@@ -29,7 +29,7 @@ const MainPage = () => {
                   ></input>
               </form>
             </div>
-          </div>
+          {/* </div> */}
           <div className='main__body'>
             <div className='main__body--lore'>
               <NavLink to='/creatures/lore'>

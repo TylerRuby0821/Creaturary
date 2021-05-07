@@ -1,0 +1,35 @@
+.usermenu__container{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+  text-align: center;
+  background-color: whitesmoke;
+  height: 100px;
+  width: 100px;
+  color: black;
+
+}
+
+.usermenu__option{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 50px;
+  display: block;
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  font-family: 'Girassol', cursive;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.usermenu__option:hover{
+  background-color: rgb(133, 127, 127);
+}
