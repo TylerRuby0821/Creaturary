@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import './LandingPage.css'
 
 const LandingPage = () => {

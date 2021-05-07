@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from 'react';
-import { Redirect, NavLink, useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from "react-redux";
+import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useSelector } from "react-redux";
 import './Creature.css'
 import Navigation from '../Naviagtion/Navigation';
-import { getCreature } from '../../store/creature';
+
 
 
 const Creature = () => {

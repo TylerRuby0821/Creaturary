@@ -9,11 +9,6 @@ const Navigation = () => {
   const user = useSelector(state => state.session.user)
   const [menu, setMenu] = useState(false)
 
-  const handleMenu = () => {
-    setMenu(true)
-
-  }
-
   return (
     <div className='navbar__container'>
       <div className='navbar__header--container'>

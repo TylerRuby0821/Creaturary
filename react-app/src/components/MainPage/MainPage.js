@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './MainPage.css'
-import { getCreatures } from '../../store/creature';
+
 
 const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
   const [search, setSearch] = useState('')
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
 
 
   return (

@@ -11,6 +11,13 @@ def get_creatures():
   creatures = Creature.query.all()
   return {'creatures': [creature.to_dict() for creature in creatures]}
 
+@creature_routes.route('/lore')
+@login_required
+def get_creatures_lore():
+  tag = Tag.query.filter(type == 'Lore').first
+  creatures = Creature.query.filter(tag_id == tag.id).all()
+  return {'creatures': [creature.to_dict() for creature in creatures]}
+
 
 @creature_routes.route('/', methods=['POST'])
 @login_required
