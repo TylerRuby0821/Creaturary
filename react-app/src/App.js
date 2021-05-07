@@ -48,11 +48,11 @@ function App() {
         <Route path="/creatures" exact={true}>
           <MainPage />
         </Route>
-        <Route path="/creatures/:creatureId" exact={true}>
-          <Creature />
-        </Route>
         <Route path="/creatures/lore" exact={true}>
           <Search />
+        </Route>
+        <Route path="/creatures/:creatureId" exact={true}>
+          <Creature />
         </Route>
       </Switch>
     </BrowserRouter>

@@ -1,0 +1,10 @@
+.search__results{
+  margin-top: 100px;
+  /* background-color: lightcoral; */
+  /* width: 600px; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
