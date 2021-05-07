@@ -8,7 +8,10 @@ import LandingPage from './components/LandingPage/LandingPage'
 import MainPage from './components/MainPage/MainPage'
 import Creature from "./components/Creature/Creature";
 import {getCreatures} from './store/creature'
-import Search from './components/Search/SearchLore'
+import SearchLore from './components/Search/SearchLore'
+import SearchAz from './components/Search/SearchAz'
+import SearchCustom from './components/Search/SearchCustom'
+
 function App() {
   const dispatch = useDispatch()
   const [loaded, setLoaded] = useState(false);
@@ -49,7 +52,13 @@ function App() {
           <MainPage />
         </Route>
         <Route path="/creatures/lore" exact={true}>
-          <Search />
+          <SearchLore />
+        </Route>
+        <Route path="/creatures/custom" exact={true}>
+          <SearchCustom />
+        </Route>
+        <Route path="/creatures/a-z" exact={true}>
+          <SearchAz />
         </Route>
         <Route path="/creatures/:creatureId" exact={true}>
           <Creature />
