@@ -11,6 +11,19 @@ def get_creatures():
   creatures = Creature.query.all()
   return {'creatures': [creature.to_dict() for creature in creatures]}
 
+@creature_routes.route('/lore')
+@login_required
+def get_creatures_lore():
+  tag = Tag.query.filter(Tag.type == 'Lore').first().to_dict()
+  creatures = Creature.query.filter(Creature.tag_id == tag['id']).all()
+  return {'creatures': [creature.to_dict() for creature in creatures]}
+
+@creature_routes.route('/custom')
+@login_required
+def get_creatures_custom():
+  tag = Tag.query.filter(Tag.type == 'Custom').first().to_dict()
+  creatures = Creature.query.filter(Creature.tag_id == tag['id']).all()
+  return {'creatures': [creature.to_dict() for creature in creatures]}
 
 @creature_routes.route('/', methods=['POST'])
 @login_required

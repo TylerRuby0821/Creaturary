@@ -1,3 +1,5 @@
+import { Redirect } from "react-router";
+
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 
@@ -53,6 +55,7 @@ export const logout = () => async (dispatch) => {
     });
     const data = await response.json();
     dispatch(removeUser());
+
 };
 
 
@@ -78,9 +81,9 @@ const initialState = { user: null };
 export default function reducer(state = initialState, action) {
     switch (action.type) {
         case SET_USER:
-            return { user: action.payload };
+            return { ...state, user: action.payload };
         case REMOVE_USER:
-            return { user: null };
+            return { ...state, user: null };
         default:
             return state;
     }
