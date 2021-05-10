@@ -1,16 +1,24 @@
 import React, { useState} from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux'
+import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './MainPage.css'
+import {getCreaturesSearch} from '../../store/creature'
 
 
 const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
   const [search, setSearch] = useState('')
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
+  const history = useHistory()
 
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('SEARCH RESULT', search)
+    dispatch(getCreaturesSearch(search))
+    history.push('/creatures/search')
+  }
 
   return (
     <div>
@@ -20,13 +28,14 @@ const MainPage = () => {
           {/* <div className='positional__helper'> */}
             <div className='main__search--container'>
               <p className='main__search--header'>Peak behind the curtain...</p>
-              <form >
+              <form onSubmit = {handleSubmit}>
                 <input
                   className='main__search--input'
                   placeholder='Search...'
-                  value=''
                   onChange={(e) => setSearch(e.target.value)}
+
                   ></input>
+                  <button className='search__button'><i class="fas fa-search"></i></button>
               </form>
             </div>
           {/* </div> */}

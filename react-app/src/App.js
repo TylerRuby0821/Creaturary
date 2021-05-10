@@ -11,6 +11,7 @@ import {getCreatures} from './store/creature'
 import SearchLore from './components/Search/SearchLore'
 import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
+import Search from './components/Search/Search'
 
 function App() {
   const dispatch = useDispatch()
@@ -57,6 +58,9 @@ function App() {
         </Route>
         <Route path="/creatures/a-z" exact={true}>
           <SearchAz />
+        </Route>
+        <Route path="/creatures/search" exact={true}>
+          <Search />
         </Route>
         <Route path="/creatures/:creatureId" exact={true}>
           <Creature />

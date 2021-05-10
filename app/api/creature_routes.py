@@ -25,6 +25,12 @@ def get_creatures_custom():
   creatures = Creature.query.filter(Creature.tag_id == tag['id']).all()
   return {'creatures': [creature.to_dict() for creature in creatures]}
 
+@creature_routes.route('/<string:search>')
+@login_required
+def get_creatures_search(search):
+  creatures = Creature.query.filter(Creature.name == search.capitalize()).all()
+  return {'creatures': [creature.to_dict() for creature in creatures]}
+
 @creature_routes.route('/', methods=['POST'])
 @login_required
 def create_creature():

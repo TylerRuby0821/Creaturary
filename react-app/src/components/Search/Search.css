@@ -8,3 +8,11 @@
   align-items: center;
   text-align: center;
 }
+
+.null__result{
+  font-size: 26px;
+  font-weight: 700;
+  font-family: 'Girassol', cursive;
+  color: black;
+  text-shadow: 2px 1px rgb(196, 18, 18);
+}

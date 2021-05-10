@@ -91,3 +91,11 @@
   margin-bottom: 30px;
   text-shadow: 2px 2px rgb(170, 13, 13);
 }
+
+.search__button{
+  height: 28px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 1px red;
+  border-radius: 9%;
+}
+
