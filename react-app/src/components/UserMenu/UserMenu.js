@@ -1,24 +1,44 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import Popup from 'reactjs-popup';
 import './UserMenu.css'
+import { useDispatch, useSelector } from 'react-redux';
+import {createCreature} from '../../store/creature'
 
 const UserMenu = () => {
-
-  const [displayCreate, setDisplayCreate] = useState('false')
+  const allTags = useSelector(state => state.tag)
+  const dispatch= useDispatch()
+  const history = useHistory()
+  const [displayCreate, setDisplayCreate] = useState(false)
   const [name, setName] = useState('')
   const [tag, setTag] = useState('')
   const [description, setDescription]= useState('')
-  const tagId = '';
+
+  // const lore =
+  // const custom =
+  // for (const tagg in allTags) {
+    // console.log("CREAT", allCreatures[creat].id)
+  //   if (allTags[tagg].type === tag){
+  //     tags = {...allTags[tagg]}
+
+  //   }
+  // }
+  // const tagId = tags.id;
+  // console.log('TAGID', tagId)
+
 
   const handleCreate = (e) => {
     e.preventDefault()
     let newCreature= {
       name,
-
+      tag,
+      description
     }
+    dispatch(createCreature(newCreature))
+    history.push('/creatures/custom')
   }
+
   return (
     <div className='usermenu__container'>
       <div className='usermenu__option'>
@@ -34,9 +54,11 @@ const UserMenu = () => {
 
             <div>
               <label name='tag'>Select a Tag:</label>
-              <select name='tag'>
-                <option value='Lore' onChange={(e)=> setTag(e.target.value)}>Lore</option>
-                <option value='Custom' onChange={(e)=> setTag(e.target.value)}>Custom</option>
+              <select name='tag' value={tag} onChange={(e) => {setTag(e.target.value)}}>
+                <option defaultValue value='' disabled>Select a Tag</option>
+                {Object.values(allTags).map(tag => {
+                  return <option value ={tag.id}> {tag.type}</option>
+                })}
               </select>
             </div>
 

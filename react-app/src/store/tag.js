@@ -10,7 +10,6 @@ const getTagsAction = (tags) => ({
 export const getTags = () => async (dispatch) => {
   const response = await fetch('/api/tags/')
   const data = await response.json()
-  console.log("DATA.TAGS", data.tags)
   dispatch(getTagsAction(data.tags))
   return data.tags
 }

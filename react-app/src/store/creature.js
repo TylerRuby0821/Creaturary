@@ -3,7 +3,7 @@ const GET_CREATURE_BY_ID = 'creature/GET_CREATURE_BY_ID'
 const GET_ALL_CREATURES_LORE = 'creature/GET_ALL_CREATURES_LORE'
 const GET_ALL_CREATURES_SEARCH = 'creature/GET_ALL_CREATURES_SEARCH'
 const GET_ALL_CREATURES_CUSTOM = 'creature/GET_ALL_CREATURES_CUSTOM'
-// const CREATE_CREATURE = 'creature/CREATE_CREATURE'
+const CREATE_CREATURE = 'creature/CREATE_CREATURE'
 
 const getCreaturesAction = (creatures) => ({
   type: GET_ALL_CREATURES,
@@ -25,10 +25,10 @@ const getCreaturesCustomAction = (creatures) => ({
   type: GET_ALL_CREATURES_CUSTOM,
   payload: creatures
 })
-// const createCreaturesAction = (creature) => ({
-//   type: CREATE_CREATURE,
-//   payload: creature
-// })
+const createCreatureAction = (creature) => ({
+  type: CREATE_CREATURE,
+  payload: creature
+})
 
 
 export const getCreatures = () => async (dispatch) => {
@@ -66,6 +66,18 @@ export const getCreature = (id) => async (dispatch) => {
   return data
 }
 
+export const createCreature = (creature) => async (dispatch) => {
+  const response = await fetch ('/api/creatures/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(creature)
+  })
+  const data = await response.json()
+  dispatch(createCreatureAction(data))
+}
+
 const initialState = {};
 
 export default function reducer(state = initialState, action) {
@@ -85,6 +97,10 @@ export default function reducer(state = initialState, action) {
         case GET_ALL_CREATURES_SEARCH:
             const searchState = {...action.payload}
             return searchState
+        case CREATE_CREATURE:
+            const newCreatureState = {creature: {...state.creature}}
+            newCreatureState.creature[action.payload.id] = action.payload
+            return newCreatureState
         default:
             return state;
     }

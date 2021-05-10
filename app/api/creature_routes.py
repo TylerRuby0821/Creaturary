@@ -1,6 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, request
 from flask_login import login_required
-from app.models import Creature, Tag
+from app.models import Creature, Tag, db
 
 creature_routes = Blueprint('creatures', __name__)
 
@@ -31,12 +31,12 @@ def get_creatures_search(search):
   creatures = Creature.query.filter(Creature.name == search.capitalize()).all()
   return {'creatures': [creature.to_dict() for creature in creatures]}
 
-@creature_routes.route('/', methods=['POST'])
+@creature_routes.route('/create', methods=['POST'])
 @login_required
 def create_creature():
   creature_name = request.json['name']
   creature_desc = request.json['description']
-  creature_tag_id= request.json['tag_id']
+  creature_tag_id= request.json['tag']
   creature = Creature(
     name = creature_name,
     description = creature_desc,
@@ -44,6 +44,7 @@ def create_creature():
   )
   db.session.add(creature)
   db.session.commit()
+  return creature.to_dict()
 
 @creature_routes.route('/<int:id>')
 @login_required
