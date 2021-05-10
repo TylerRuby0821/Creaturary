@@ -4,31 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { authenticate, login } from "../../store/session";
 import './LoginForm.css'
 
-const LoginForm = ({ authenticated, setAuthenticated }) => {
+const LoginForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
+  const sessionLoaded = useSelector(state => state.session.loaded)
   const [errors, setErrors] = useState([]);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const onLogin = async (e) => {
+  const onLogin = (e) => {
     e.preventDefault();
-    const user = await dispatch(login(email, password));
-    if (!user.errors) {
-      dispatch(authenticate(user))
-    } else {
-      setErrors(user.errors);
-    }
+    dispatch(login(email, password))
+      .catch(err => setErrors(err.errors))
   };
 
-  const handleDemo = async (e) => {
+  const handleDemo = (e) => {
     e.preventDefault();
-    const user = await dispatch(login('demo@aa.io','password'))
-    if (!user.errors) {
-      dispatch(authenticate(user))
-    } else {
-      setErrors(user.errors);
-    }
+    dispatch(login('demo@aa.io','password'))
+      .catch(err => setErrors(err.errors))
   }
 
   const updateEmail = (e) => {
@@ -39,7 +32,7 @@ const LoginForm = ({ authenticated, setAuthenticated }) => {
     setPassword(e.target.value);
   };
 
-  if (user) {
+  if (sessionLoaded && user) {
     return <Redirect to="/creatures" />;
   }
 
