@@ -11,19 +11,15 @@ const Navigation = () => {
 
   return (
     <div>
-      {user &&
         <div className='navbar__container'>
           <div className='navbar__header--container'>
             <h1 className='navbar__header'><NavLink className='navbar__header' to='/creatures'>Creaturary</NavLink></h1>
           </div>
-          <div className='navbar__search--container'>
-            {/* Search Bar Here */}
-          </div>
           <div className='navbar__user--container'>
-            <h3 className='navbar__username'>{user.username}</h3>
-            <span className='navbar__usermenu'>
+              <h3 className='navbar__username'>{user.username}</h3>
+              <span className='navbar__usermenu'>
               <i class="fas fa-bars"  onClick={() => setMenu(!menu)}></i>
-            </span>
+              </span>
             {menu &&
               <div className='usermenu'>
                 <UserMenu />
@@ -31,8 +27,6 @@ const Navigation = () => {
             }
           </div>
         </div>
-      }
-
     </div>
 
   );

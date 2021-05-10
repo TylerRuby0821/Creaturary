@@ -4,9 +4,10 @@ import { signUp } from '../../store/session';
 import { useDispatch, useSelector } from "react-redux";
 import './SignUpForm.css'
 
-const SignUpForm = ({authenticated, setAuthenticated}) => {
+const SignUpForm = () => {
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user);
+  const sessionLoaded = useSelector(state => state.session.loaded)
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -15,11 +16,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      await dispatch(signUp(username, email, password));
-      if (!user.errors) {
-        setAuthenticated(true);
-      }
-    }
+     dispatch(signUp(username, email, password))
+    };
   };
 
   const updateUsername = (e) => {
@@ -38,7 +36,7 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
     setRepeatPassword(e.target.value);
   };
 
-  if (authenticated) {
+  if (sessionLoaded && user) {
     return <Redirect to="/creatures" />;
   }
 
@@ -95,7 +93,8 @@ const SignUpForm = ({authenticated, setAuthenticated}) => {
         <div className='signup__form--nav'> Already have an account? <NavLink className='signup__nav--button' to='/login'>Login Here</NavLink></div>
       </form>
     </div>
-  );
+    );
+
 };
 
-export default SignUpForm;
+export default SignUpForm

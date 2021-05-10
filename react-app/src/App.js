@@ -1,48 +1,43 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
-import { useDispatch} from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
+import { authenticate } from "./store/session";
+import {getCreatures} from './store/creature'
+import {getTags} from './store/tag'
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
-import { authenticate } from "./store/session";
 import LandingPage from './components/LandingPage/LandingPage'
 import MainPage from './components/MainPage/MainPage'
 import Creature from "./components/Creature/Creature";
-import {getCreatures} from './store/creature'
-import {getTags} from './store/tag'
 import SearchLore from './components/Search/SearchLore'
 import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
 import Search from './components/Search/Search'
+import ProtectedRoute from './components/auth/ProtectedRoute'
+
 
 function App() {
   const dispatch = useDispatch()
-  const [loaded, setLoaded] = useState(false);
+  const user = useSelector(state => state.session.user)
+  const sessionLoaded = useSelector(state => state.session.loaded)
   const [creatures, setCreatures] = useState({})
   const [tags, setTags] = useState({})
 
+
   useEffect(() => {
     dispatch(getCreatures())
-  }, [creatures, dispatch])
-
-  useEffect(() => {
     dispatch(getTags())
-  }, [tags, dispatch])
+  }, [creatures, tags, dispatch])
+
 
   useEffect(() => {
-    (async() => {
-      await dispatch(authenticate())
-      setLoaded(true);
-    })();
+    dispatch(authenticate())
   }, [dispatch]);
 
-  if (!loaded) {
-    return null;
-  }
 
 
   return (
     <BrowserRouter>
-      {/* <NavBar setAuthenticated={setAuthenticated} /> */}
       <Switch>
         <Route path="/" exact={true}>
           <LandingPage />
@@ -53,24 +48,24 @@ function App() {
         <Route path="/sign-up" exact={true}>
           <SignUpForm />
         </Route>
-        <Route path="/creatures" exact={true}>
+        <ProtectedRoute path="/creatures" exact={true}>
           <MainPage />
-        </Route>
-        <Route path="/creatures/lore" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/creatures/lore" exact={true}>
           <SearchLore />
-        </Route>
-        <Route path="/creatures/custom" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/creatures/custom" exact={true}>
           <SearchCustom />
-        </Route>
-        <Route path="/creatures/a-z" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/creatures/a-z" exact={true}>
           <SearchAz />
-        </Route>
-        <Route path="/creatures/search" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/creatures/search" exact={true}>
           <Search />
-        </Route>
-        <Route path="/creatures/:creatureId" exact={true}>
+        </ProtectedRoute>
+        <ProtectedRoute path="/creatures/:creatureId" exact={true}>
           <Creature />
-        </Route>
+        </ProtectedRoute>
       </Switch>
     </BrowserRouter>
   );
