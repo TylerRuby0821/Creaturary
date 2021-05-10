@@ -8,6 +8,7 @@ import LandingPage from './components/LandingPage/LandingPage'
 import MainPage from './components/MainPage/MainPage'
 import Creature from "./components/Creature/Creature";
 import {getCreatures} from './store/creature'
+import {getTags} from './store/tag'
 import SearchLore from './components/Search/SearchLore'
 import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
@@ -17,10 +18,15 @@ function App() {
   const dispatch = useDispatch()
   const [loaded, setLoaded] = useState(false);
   const [creatures, setCreatures] = useState({})
+  const [tags, setTags] = useState({})
 
   useEffect(() => {
     dispatch(getCreatures())
   }, [creatures, dispatch])
+
+  useEffect(() => {
+    dispatch(getTags())
+  }, [tags, dispatch])
 
   useEffect(() => {
     (async() => {

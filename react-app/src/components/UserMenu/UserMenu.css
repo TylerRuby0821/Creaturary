@@ -33,3 +33,41 @@
 .usermenu__option:hover{
   background-color: rgb(133, 127, 127);
 }
+
+/* .popup-content{
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background: whitesmoke;
+  color: black;
+
+} */
+
+.popup-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  background: whitesmoke;
+  width: 50%;
+  padding: 15px;
+  box-sizing: border-box;
+
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: 200px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.7);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
