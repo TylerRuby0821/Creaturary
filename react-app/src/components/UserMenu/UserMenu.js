@@ -45,15 +45,15 @@ const UserMenu = () => {
         <div className='usermenu__option' onClick={() => setDisplayCreate(true)}>Create Custom</div>
         <Popup open={displayCreate} onClose={()=> setDisplayCreate(false)}>
           <form className='create__form' onSubmit={handleCreate}>
-            <div>
-              <label name='name'>Creature Name: </label>
+            <div className='form__item'>
+              <label name='name' className='form__label'>Creature Name: </label>
               <input
               type='text'
               onChange={(e)=> setName(e.target.value)}></input>
             </div>
 
-            <div>
-              <label name='tag'>Select a Tag:</label>
+            <div className='form__item'>
+              <label name='tag' className='form__label'>Select a Tag:</label>
               <select name='tag' value={tag} onChange={(e) => {setTag(e.target.value)}}>
                 <option defaultValue value='' disabled>Select a Tag</option>
                 {Object.values(allTags).map(tag => {
@@ -62,13 +62,14 @@ const UserMenu = () => {
               </select>
             </div>
 
-            <div>
-              <label name ='description'>Creature Description:</label>
+            <div className='form__item'>
+              <label name ='description' className='form__label'>Creature Description:</label>
               <textarea type='textarea'
+              className='description'
               onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
 
-            <button>Create New Creature</button>
+            <button className='submit__create'>Create New Creature</button>
           </form>
         </Popup>
       </div>
