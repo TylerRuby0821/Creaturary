@@ -14,38 +14,47 @@ the database for storage and access.
 
 <h1>Features - Current State </h1>
 <h3>Landing Page</h3>
-![Landing Page](/referenceimages/landing.PNG)
 <p>
   <img src="/referenceimages/landing.PNG" width="500" height="300" />
 </p>
 
 <h3>Signup</h3>
   Users can sign up to create an account on the application.
-![Signup](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/signup.PNG)
-  
+<p>
+  <img src="/referenceimages/signup.PNG" width="500" height="300" />
+</p>  
+
 <h3>Signup</h3>
   Users who already have an account can log in, or can log in as the Demo user.
-![Login](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/login.PNG)
-  
+<p>
+  <img src="/referenceimages/login.PNG" width="500" height="300" />
+</p>  
+
 <h3>Main Page</h3>
   Once users have signed up/logged in, they will be redirected to the main page,
   allowing them a multitude of search options, as well as access to the users menu 
   to create a new creature or logout
-![Main](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/main.PNG)
- 
+<p>
+  <img src="/referenceimages/main.PNG" width="500" height="300" />
+</p> 
+
 <h3>Search</h3>
   Wether a user types into the search field or clicks one of the fast links, it will dispay the results of that search,
   presenting any creature in the database that fitsthe criteria, as well as a brief description. The user can then click on 
   the creatures result to be taken to their individual page.
-![Search Results](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/results.PNG)
-![Creature Page](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/creaturepage.PNG) 
-  
+<p>
+  <img src="/referenceimages/results.PNG" width="500" height="300" />
+  <img src="/referenceimages/creaturepage" width="500" height="300" />
+</p> 
+
 <h3>Create Creature / User Menu</h3>
   If the creature is not currently in the database, the user can access the user-menu to give them the option of
   adding it to the database!
   The user menu also provides access to the logout functionality if a user has finished thier time in the app.
-![User Menu](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/usersmenu.PNG)
-![Create Menu](https://github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/newcreature.PNG) 
+<p>
+  <img src="/referenceimages/usersmenu" width="500" height="300" />
+  <img src="/referenceimages/newcreature" width="500" height="300" />
+</p> 
 
 <h2>To Do:</h2>
 
