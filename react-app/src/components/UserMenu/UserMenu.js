@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink, useHistory } from 'react-router-dom';
+import {useHistory } from 'react-router-dom';
 import LogoutButton from '../auth/LogoutButton';
 import Popup from 'reactjs-popup';
 import './UserMenu.css'

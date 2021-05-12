@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector} from 'react-redux'
+import React from 'react';
+import { useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './Search.css'
 // import {getCreatures} from '../../store/creature'
@@ -26,15 +26,15 @@ const Search = () => {
   //   setCreatures(dispatch(getCreatures()))
   // }, [dispatch])
 
-  let returnState
+
   if(creaturesArr){
-     returnState= creaturesArr.map(creature => {
+     creaturesArr.map(creature => {
       return (
         <Result key={creature.id} creature={creature}/>
       )
 
   })} else{
-     returnState = <div> No Creatures to display!</div>
+      return <div> No Creatures to display!</div>
   }
 
 

@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Route, Switch} from "react-router-dom";
-import { useDispatch, useSelector} from "react-redux";
+import { useDispatch} from "react-redux";
 import { authenticate } from "./store/session";
 import {getCreatures} from './store/creature'
 import {getTags} from './store/tag'
@@ -18,10 +18,6 @@ import ProtectedRoute from './components/auth/ProtectedRoute'
 
 function App() {
   const dispatch = useDispatch()
-  const user = useSelector(state => state.session.user)
-  const sessionLoaded = useSelector(state => state.session.loaded)
-  const [creatures, setCreatures] = useState({})
-  const [tags, setTags] = useState({})
 
   useEffect(() => {
     dispatch(authenticate())
@@ -30,7 +26,7 @@ function App() {
   useEffect(() => {
     dispatch(getCreatures())
     dispatch(getTags())
-  }, [creatures, tags, dispatch])
+  }, [dispatch])
 
 
 

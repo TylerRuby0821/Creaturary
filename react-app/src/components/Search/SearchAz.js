@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './Search.css'
@@ -9,7 +9,6 @@ const SearchAz = () => {
 
   const allCreatures = useSelector(state => state.creature)
   const dispatch = useDispatch();
-  const [creatures, setCreatures] = useState({})
   // console.log("Creatures = ", allCreatures)
 
   let creaturesArr = []
@@ -23,7 +22,7 @@ const SearchAz = () => {
   //https://stackoverflow.com/questions/8900732/sort-objects-in-an-array-alphabetically-on-one-property-of-the-array
 
   useEffect(() => {
-    setCreatures(dispatch(getCreatures()))
+    dispatch(getCreatures())
   }, [dispatch])
 
 

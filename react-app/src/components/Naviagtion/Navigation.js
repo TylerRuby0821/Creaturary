@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import './Navigation.css'
 import { useSelector } from 'react-redux'
 import UserMenu from '../UserMenu/UserMenu'
-import { NavLink, Redirect } from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 
 const Navigation = () => {
 

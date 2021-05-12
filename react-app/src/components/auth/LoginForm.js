@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { authenticate, login } from "../../store/session";
+import {login } from "../../store/session";
 import './LoginForm.css'
 
 const LoginForm = () => {
