@@ -16,7 +16,7 @@ the database for storage and access.
 <h3>Landing Page</h3>
 ![Landing Page](/referenceimages/landing.PNG)
 <p>
-  <img src="/referenceimages/landing.PNG" width="220" height="240" />
+  <img src="/referenceimages/landing.PNG" width="500" height="500" />
 </p>
 
 <h3>Signup</h3>
