@@ -53,7 +53,7 @@ the database for storage and access.
   The user menu also provides access to the logout functionality if a user has finished thier time in the app.
 <p>
   <img src="/referenceimages/usersmenu.PNG" width="500" height="300" />
-  <img src="/referenceimages/newcreature.PNG" width="500" height="300" />
+  <img src="/referenceimages/newcreature.PNG" width="300" height="500" />
 </p> 
 
 <h2>To Do:</h2>
