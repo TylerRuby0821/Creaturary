@@ -6,7 +6,6 @@ creature_routes = Blueprint('creatures', __name__)
 
 
 @creature_routes.route('/')
-@login_required
 def get_creatures():
   creatures = Creature.query.all()
   return {'creatures': [creature.to_dict() for creature in creatures]}

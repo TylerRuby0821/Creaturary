@@ -23,6 +23,9 @@ function App() {
   const [creatures, setCreatures] = useState({})
   const [tags, setTags] = useState({})
 
+  useEffect(() => {
+    dispatch(authenticate())
+  }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCreatures())
@@ -30,9 +33,6 @@ function App() {
   }, [creatures, tags, dispatch])
 
 
-  useEffect(() => {
-    dispatch(authenticate())
-  }, [dispatch]);
 
 
 
