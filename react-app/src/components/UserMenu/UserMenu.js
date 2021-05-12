@@ -57,7 +57,7 @@ const UserMenu = () => {
               <select name='tag' value={tag} onChange={(e) => {setTag(e.target.value)}}>
                 <option defaultValue value='' disabled>Select a Tag</option>
                 {Object.values(allTags).map(tag => {
-                  return <option value ={tag.id}> {tag.type}</option>
+                  return <option key={tag.id} value ={tag.id}> {tag.type}</option>
                 })}
               </select>
             </div>
