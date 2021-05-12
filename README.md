@@ -24,7 +24,7 @@ the database for storage and access.
   <img src="/referenceimages/signup.PNG" width="500" height="300" />
 </p>  
 
-<h3>Signup</h3>
+<h3>Login</h3>
   Users who already have an account can log in, or can log in as the Demo user.
 <p>
   <img src="/referenceimages/login.PNG" width="500" height="300" />
