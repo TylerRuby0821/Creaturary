@@ -14,7 +14,7 @@ the database for storage and access.
 
 <h1>Features - Current State </h1>
 <h3>Landing Page</h3>
-![Landing Page](https://raw.github.com/TylerRuby0821/Creaturary/blob/main/referenceimages/landing.PNG)
+![Landing Page](/referenceimages/landing.PNG)
 
 <h3>Signup</h3>
   Users can sign up to create an account on the application.
