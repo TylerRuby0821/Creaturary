@@ -35,26 +35,26 @@ const MainPage = () => {
                   onChange={(e) => setSearch(e.target.value)}
 
                   ></input>
-                  <button className='search__button'><i class="fas fa-search"></i></button>
+                  <button className='search__button'><i className="fas fa-search"></i></button>
               </form>
             </div>
           {/* </div> */}
           <div className='main__body'>
             <div className='main__body--lore'>
               <NavLink to='/creatures/lore'>
-                <i  class="fas fa-book"></i>
+                <i className="fas fa-book"></i>
                 <div className='book__text'>Lore</div>
               </NavLink>
             </div>
             <div className='main__body--az'>
               <NavLink to='/creatures/a-z'>
-                <i class="fas fa-book"></i>
+                <i className="fas fa-book"></i>
                 <div className='book__text'>A-Z</div>
               </NavLink>
             </div>
             <div className='main__body--custom'>
               <NavLink to='/creatures/custom'>
-                <i class="fas fa-book"></i>
+                <i className ="fas fa-book"></i>
                 <div className='book__text'>Custom</div>
               </NavLink>
             </div>

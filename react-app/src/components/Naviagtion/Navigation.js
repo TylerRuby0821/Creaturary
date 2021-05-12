@@ -18,7 +18,7 @@ const Navigation = () => {
           <div className='navbar__user--container'>
               <h3 className='navbar__username'>{user.username}</h3>
               <span className='navbar__usermenu'>
-              <i class="fas fa-bars"  onClick={() => setMenu(!menu)}></i>
+              <i className="fas fa-bars"  onClick={() => setMenu(!menu)}></i>
               </span>
             {menu &&
               <div className='usermenu'>
