@@ -44,7 +44,7 @@ the database for storage and access.
   the creatures result to be taken to their individual page.
 <p>
   <img src="/referenceimages/results.PNG" width="500" height="300" />
-  <img src="/referenceimages/creaturepage" width="500" height="300" />
+  <img src="/referenceimages/creaturepage.PNG" width="500" height="300" />
 </p> 
 
 <h3>Create Creature / User Menu</h3>
@@ -52,8 +52,8 @@ the database for storage and access.
   adding it to the database!
   The user menu also provides access to the logout functionality if a user has finished thier time in the app.
 <p>
-  <img src="/referenceimages/usersmenu" width="500" height="300" />
-  <img src="/referenceimages/newcreature" width="500" height="300" />
+  <img src="/referenceimages/usersmenu.PNG" width="500" height="300" />
+  <img src="/referenceimages/newcreature.PNG" width="500" height="300" />
 </p> 
 
 <h2>To Do:</h2>
