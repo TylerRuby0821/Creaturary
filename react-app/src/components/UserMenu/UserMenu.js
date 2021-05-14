@@ -28,15 +28,16 @@ const UserMenu = () => {
   // console.log('TAGID', tagId)
 
 
-  const handleCreate = (e) => {
+  const handleCreate = async (e) => {
     e.preventDefault()
     let newCreature= {
       name,
       tag,
       description
     }
-    dispatch(createCreature(newCreature))
-    history.push('/creatures/custom')
+    const creature = await dispatch(createCreature(newCreature))
+    // console.log('CREATURE ------->', creature)
+    history.push(`/creatures/${creature.id}`)
   }
 
   return (

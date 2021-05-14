@@ -30,3 +30,25 @@
   font-size: 40px;
   font-weight: 700;
 }
+
+.creature__tag--Lore{
+  margin-top: 10px;
+  padding: 4px;
+  font-family: 'Girassol', cursive;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(206, 70, 7);
+  /* border-radius: 30%; */
+  border: 1px double black;
+}
+
+.creature__tag--Custom{
+  margin-top: 10px;
+  padding: 4px;
+  font-family: 'Girassol', cursive;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgb(33, 189, 33);
+  /* border-radius: 30%; */
+  border: 1px double black;
+}

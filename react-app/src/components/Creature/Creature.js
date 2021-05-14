@@ -21,6 +21,17 @@ const Creature = () => {
    }
   }
 
+  const allTags = useSelector(state => state.tag)
+  // console.log('ALL TAGS', allTags)
+  let tag = {};
+  for (const t in allTags) {
+    // console.log("T------->", allTags[t].type)
+    // console.log('CREATURE', creature)
+    if (allTags[t].id === creature.tag_id){
+      tag = {...allTags[t]}
+    }
+  }
+  // console.log('TAG----->', tag)
   // console.log(creature)
   // console.log(creature)
   // const dispatch = useDispatch()
@@ -45,7 +56,8 @@ const Creature = () => {
       {/* Thumbnail */}
       <div className='main__body--creature'>
         <span className='creature__name'>{creature.name}</span>
-        <span className='creature__tag'>{creature.tag_id}</span>
+        {tag.type === 'Custom' ? <span className='creature__tag--Custom'>{tag.type}</span> : <span className='creature__tag--Lore'>{tag.type}</span> }
+        {/* <span className='creature__tag'>{tag.type}</span> */}
         <div className='creature__decription'>{creature.description}</div>
       </div>
     </div>

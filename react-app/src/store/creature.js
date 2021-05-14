@@ -76,6 +76,8 @@ export const createCreature = (creature) => async (dispatch) => {
   })
   const data = await response.json()
   dispatch(createCreatureAction(data))
+  // console.log("DATA ------>", data)
+  return data
 }
 
 const initialState = {};
@@ -98,8 +100,8 @@ export default function reducer(state = initialState, action) {
             const searchState = {...action.payload}
             return searchState
         case CREATE_CREATURE:
-            const newCreatureState = {creature: {...state.creature}}
-            newCreatureState.creature[action.payload.id] = action.payload
+            const newCreatureState = {...state.creature}
+            newCreatureState[action.payload.id] = action.payload
             return newCreatureState
         default:
             return state;

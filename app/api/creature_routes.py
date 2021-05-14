@@ -43,6 +43,9 @@ def create_creature():
   )
   db.session.add(creature)
   db.session.commit()
+  db.session.flush()
+  db.session.refresh(creature)
+  print('CREATURE TO DICT ----------->', creature.to_dict())
   return creature.to_dict()
 
 @creature_routes.route('/<int:id>')
