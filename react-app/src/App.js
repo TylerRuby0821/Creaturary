@@ -14,7 +14,7 @@ import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
 import Search from './components/Search/Search'
 import ProtectedRoute from './components/auth/ProtectedRoute'
-
+import Footer from './components/Footer/Footer'
 
 function App() {
   const dispatch = useDispatch()
@@ -34,35 +34,36 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Switch>
-        <Route path="/" exact={true}>
-          <LandingPage />
-        </Route>
-        <Route path="/login" exact={true}>
-          <LoginForm />
-        </Route>
-        <Route path="/sign-up" exact={true}>
-          <SignUpForm />
-        </Route>
-        <ProtectedRoute path="/creatures" exact={true}>
-          <MainPage />
-        </ProtectedRoute>
-        <ProtectedRoute path="/creatures/lore" exact={true}>
-          <SearchLore />
-        </ProtectedRoute>
-        <ProtectedRoute path="/creatures/custom" exact={true}>
-          <SearchCustom />
-        </ProtectedRoute>
-        <ProtectedRoute path="/creatures/a-z" exact={true}>
-          <SearchAz />
-        </ProtectedRoute>
-        <ProtectedRoute path="/creatures/search" exact={true}>
-          <Search />
-        </ProtectedRoute>
-        <ProtectedRoute path="/creatures/:creatureId" exact={true}>
-          <Creature />
-        </ProtectedRoute>
-      </Switch>
+        <Switch>
+          <Route path="/" exact={true}>
+            <LandingPage />
+          </Route>
+          <Route path="/login" exact={true}>
+            <LoginForm />
+          </Route>
+          <Route path="/sign-up" exact={true}>
+            <SignUpForm />
+          </Route>
+          <ProtectedRoute path="/creatures" exact={true}>
+            <MainPage />
+          </ProtectedRoute>
+          <ProtectedRoute path="/creatures/lore" exact={true}>
+            <SearchLore />
+          </ProtectedRoute>
+          <ProtectedRoute path="/creatures/custom" exact={true}>
+            <SearchCustom />
+          </ProtectedRoute>
+          <ProtectedRoute path="/creatures/a-z" exact={true}>
+            <SearchAz />
+          </ProtectedRoute>
+          <ProtectedRoute path="/creatures/search" exact={true}>
+            <Search />
+          </ProtectedRoute>
+          <ProtectedRoute path="/creatures/:creatureId" exact={true}>
+            <Creature />
+          </ProtectedRoute>
+        </Switch>
+        <Footer />
     </BrowserRouter>
   );
 }

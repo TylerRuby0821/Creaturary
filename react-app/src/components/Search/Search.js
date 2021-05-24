@@ -1,12 +1,16 @@
 import React from 'react';
 import { useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
+import {useLocation} from 'react-router-dom'
 import './Search.css'
 // import {getCreatures} from '../../store/creature'
 import Result from '../Result/Result'
 
 const Search = () => {
-
+  const query = useLocation()
+  const test = query.search.slice(1)
+  // const search = props.search
+  // console.log('SEARCH', search)
   const allCreatures = useSelector(state => state.creature)
   // const dispatch = useDispatch();
   // const [creatures, setCreatures] = useState({})
@@ -14,7 +18,11 @@ const Search = () => {
 
   let creaturesArr = []
   for (const creat in allCreatures) {
-    creaturesArr.push(allCreatures[creat])
+    // console.log('CREAT', allCreatures[creat])
+    // console.log('QUERY', query)
+    // console.log('TEST', test)
+    if (allCreatures[creat].name.toLowerCase().includes(test))
+      creaturesArr.push(allCreatures[creat])
   }
   // console.log('ARRAY', creaturesArr)
   creaturesArr.sort((a, b) => {
