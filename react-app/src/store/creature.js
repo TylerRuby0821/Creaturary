@@ -75,6 +75,11 @@ export const createCreature = (creature) => async (dispatch) => {
     body: JSON.stringify(creature)
   })
   const data = await response.json()
+  if (data.errors) {
+    const err = new Error('Unauthorized')
+    err.errors = data.errors;
+    throw err;
+} else
   dispatch(createCreatureAction(data))
   // console.log("DATA ------>", data)
   return data

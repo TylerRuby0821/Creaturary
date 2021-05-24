@@ -14,7 +14,7 @@ const UserMenu = () => {
   const [name, setName] = useState('')
   const [tag, setTag] = useState('')
   const [description, setDescription]= useState('')
-
+  const [errors, setErrors] = useState([]);
   // const lore =
   // const custom =
   // for (const tagg in allTags) {
@@ -30,14 +30,17 @@ const UserMenu = () => {
 
   const handleCreate = async (e) => {
     e.preventDefault()
+    // console.log('TAG', tag)
     let newCreature= {
       name,
       tag,
       description
     }
-    const creature = await dispatch(createCreature(newCreature))
+    const creature = await dispatch(createCreature(newCreature)).catch(err => setErrors(err.errors))
     // console.log('CREATURE ------->', creature)
-    history.push(`/creatures/${creature.id}`)
+    if (creature) {
+      history.push(`/creatures/${creature.id}`)
+    }
   }
 
   return (
@@ -46,6 +49,11 @@ const UserMenu = () => {
         <div className='usermenu__option' onClick={() => setDisplayCreate(true)}>Create Custom</div>
         <Popup open={displayCreate} onClose={()=> setDisplayCreate(false)}>
           <form className='create__form' onSubmit={handleCreate}>
+            <div className='create__errors'>
+              {errors.map((error) => (
+                <div key={error} className='error__message'>{error}</div>
+              ))}
+            </div>
             <div className='form__item'>
               <label name='name' className='form__label'>Creature Name: </label>
               <input
