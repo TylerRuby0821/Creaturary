@@ -1,23 +1,24 @@
 import React, { useState} from 'react';
 import { NavLink, Redirect, useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './MainPage.css'
-import {getCreaturesSearch} from '../../store/creature'
+
 
 
 const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
   const [search, setSearch] = useState('')
-  const dispatch = useDispatch()
   const history = useHistory()
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('SEARCH RESULT', search)
-    dispatch(getCreaturesSearch(search))
-    history.push('/creatures/search')
+    // dispatch(getCreaturesSearch(search))
+    history.push({
+      pathname: '/creatures/search',
+      search: search
+    })
   }
 
   return (
