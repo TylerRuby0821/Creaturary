@@ -52,6 +52,11 @@
   /* text-shadow: 1px 1px rgb(219, 215, 215); */
 }
 
+.navbar__usermenu:hover{
+  transform: rotate(-90deg);
+  transition: 1s;
+}
+
 .hidden {
   visibility: hidden;
 }

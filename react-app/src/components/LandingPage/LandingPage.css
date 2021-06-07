@@ -43,6 +43,13 @@
   font-family: 'Itim', cursive;
 }
 
+.landing__login--nav:hover{
+  transform: translate(2px, 2px);
+}
+.landing__signup--nav:hover{
+  transform: translate(2px, 2px);
+}
+
 .landing__signup--nav{
   display: flex;
   justify-content: center;
