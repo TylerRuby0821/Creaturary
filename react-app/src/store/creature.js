@@ -105,7 +105,7 @@ export default function reducer(state = initialState, action) {
             const searchState = {...action.payload}
             return searchState
         case CREATE_CREATURE:
-            const newCreatureState = {...state.creature}
+            const newCreatureState = {...state}
             newCreatureState[action.payload.id] = action.payload
             return newCreatureState
         default:
