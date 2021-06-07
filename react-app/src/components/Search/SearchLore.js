@@ -3,7 +3,7 @@ import {useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './Search.css'
 import Result from '../Result/Result'
-
+import Pagination from '../Pagination/Pagination'
 const SearchLore = () => {
 
   const allCreatures = useSelector(state => state.creature)
@@ -24,15 +24,35 @@ const SearchLore = () => {
 
 
   return (
-    <div>
-      <Navigation />
-      <div className='search__results'>
-        {creaturesArr.map(creature => {
-          return (
-            <Result key={creature.id} creature={creature}/>
-          )
-        })}
-      </div>
+    // <div>
+    //   <Navigation />
+    //   <div className='search__results'>
+    //     {creaturesArr.map(creature => {
+    //       return (
+    //         <Result key={creature.id} creature={creature}/>
+    //       )
+    //     })}
+    //   </div>
+    // </div>
+    <div className = 'search__results'>
+      {creaturesArr.length > 0 ? (
+        <>
+        <div>
+          <Navigation />
+        </div>
+        <div>
+          <Pagination
+            data = {creaturesArr}
+            Result = {Result}
+            title = 'Creatures'
+            pagelimit = {5}
+            creatures ={6}
+          />
+        </div>
+        </>
+      ) : (
+        <h1> No Creatures to show!</h1>
+      )}
     </div>
   )
 }

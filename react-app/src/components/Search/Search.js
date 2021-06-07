@@ -5,7 +5,7 @@ import {useLocation} from 'react-router-dom'
 import './Search.css'
 // import {getCreatures} from '../../store/creature'
 import Result from '../Result/Result'
-
+import Pagination from '../Pagination/Pagination'
 const Search = () => {
   const query = useLocation()
   const test = query.search.slice(1)
@@ -53,12 +53,34 @@ const Search = () => {
       <Navigation />
       <div className='search__results'>
         {creaturesArr.length > 0 ?
-          creaturesArr.map(creature => {
-            return (
-              <Result key={creature.id} creature={creature}/>
-            )
-
-        })
+          <div className = 'search__results'>
+          {creaturesArr.length > 0 ? (
+            <>
+            <div>
+              <Navigation />
+            </div>
+            <div>
+              <Pagination
+                data = {creaturesArr}
+                Result = {Result}
+                title = 'Creatures'
+                pagelimit = {5}
+                creatures ={6}
+              />
+            </div>
+            </>
+          ) : (
+            <h1> No Creatures to show!</h1>
+          )}
+          {/* )}
+          <div className='search__results'>
+            {creaturesArr.map(creature => {
+              return (
+                <Result key={creature.id} creature={creature}/>
+              )
+            })} */}
+          {/* </div> */}
+        </div>
           : <div className='null__result'>No Creature under that name.. yet!</div>
         }
 

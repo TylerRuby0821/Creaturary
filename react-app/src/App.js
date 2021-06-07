@@ -14,7 +14,7 @@ import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
 import Search from './components/Search/Search'
 import ProtectedRoute from './components/auth/ProtectedRoute'
-import Footer from './components/Footer/Footer'
+
 
 function App() {
   const dispatch = useDispatch()

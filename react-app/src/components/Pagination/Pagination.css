@@ -1,0 +1,34 @@
+.pagination__title{
+  font-size: 42px;
+  font-weight: 700;
+  font-family: 'Creepster', cursive;
+  margin-bottom: 10px;
+  text-shadow: 1px 1px rgb(170, 13, 13);
+}
+
+.prev.disabled,
+.next.disabled {
+  pointer-events: none;
+  box-shadow: none;
+  color: #999;
+}
+
+.pageNumbers{
+  border-radius: 50%;
+  padding: 5px, 5px;
+  margin: 10px, 10px;
+  cursor: pointer;
+}
+
+.prev,
+.next {
+  margin: 5px 10px ;
+  height: 30px;
+  font-family: 'Itim', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  background-color: grey;
+  color: black;
+  text-shadow: 1px 1px rgb(170, 13, 13);
+  cursor: pointer;
+}
