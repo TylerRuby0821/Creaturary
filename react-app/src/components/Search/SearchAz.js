@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './Search.css'
-
+import Pagination from '../Pagination/Pagination'
 import Result from '../Result/Result'
 
 const SearchAz = () => {
@@ -20,16 +20,44 @@ const SearchAz = () => {
 
 
   return (
-    <div>
-      <Navigation />
+  //   <div>
+  //     <Navigation />
+  //     <div className='search__results'>
+  //       {creaturesArr.map(creature => {
+  //         return (
+  //           <Result key={creature.id} creature={creature}/>
+  //         )
+  //       })}
+  //     </div>
+  // </div>
+  <div className = 'search__results'>
+      {creaturesArr.length > 0 ? (
+        <>
+        <div>
+          <Navigation />
+        </div>
+        <div>
+          <Pagination
+            data = {creaturesArr}
+            Result = {Result}
+            title = 'Creatures'
+            pagelimit = {5}
+            creatures ={6}
+          />
+        </div>
+        </>
+      ) : (
+        <h1> No Creatures to show!</h1>
+      )}
+      {/* )}
       <div className='search__results'>
         {creaturesArr.map(creature => {
           return (
             <Result key={creature.id} creature={creature}/>
           )
-        })}
-      </div>
-  </div>
+        })} */}
+      {/* </div> */}
+    </div>
   )
 }
 
