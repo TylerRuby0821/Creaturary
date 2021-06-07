@@ -58,7 +58,7 @@ the database for storage and access.
 
 <h2>To Do:</h2>
 
-- [ ] Better Error Handling when creating a creature fails.
+- [X] Better Error Handling when creating a creature fails.
 - [ ] User-Favorites to allow users to favorite and view their favorite creatures
 - [ ] AWS integration so creatures can have photos uploaded
 - [ ] user authorization - Role based for editing/deleting creatures
