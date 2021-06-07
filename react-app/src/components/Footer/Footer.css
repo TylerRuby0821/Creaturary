@@ -13,6 +13,11 @@
   margin-top: 20px;
 }
 
+.footer__header--text{
+  margin-bottom: 10px;
+  font-family: 'Itim', cursive;
+  font-size: 22px;
+}
 .footer__link{
   margin: 10px;
   cursor: pointer;
@@ -24,4 +29,19 @@
 
 .footer__image:hover{
   transform: translate(2px, 2px);
+}
+
+.portfolio{
+  text-align: center;
+  height: 35px;
+  width: 35px;
+  font-size: 40px;
+  font-weight: 700;
+  background-color: grey;
+  padding: 8px;
+  margin: auto;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #2c2e30;
+  font-family: 'Itim', cursive;
 }
