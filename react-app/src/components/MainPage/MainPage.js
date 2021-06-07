@@ -9,17 +9,16 @@ import './MainPage.css'
 const MainPage = () => {
 
   const user = useSelector(state => state.session.user)
-  const [search, setSearch] = useState('')
-  const history = useHistory()
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    // dispatch(getCreaturesSearch(search))
-    history.push({
-      pathname: '/creatures/search',
-      search: search
-    })
-  }
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  //   // dispatch(getCreaturesSearch(search))
+  //   history.push({
+  //     pathname: '/creatures/search',
+  //     search: search
+  //   })
+  // }
 
   return (
     <div>
@@ -29,15 +28,7 @@ const MainPage = () => {
           {/* <div className='positional__helper'> */}
             <div className='main__search--container'>
               <p className='main__search--header'>Peak behind the curtain...</p>
-              <form onSubmit = {handleSubmit}>
-                <input
-                  className='main__search--input'
-                  placeholder='Search...'
-                  onChange={(e) => setSearch(e.target.value)}
 
-                  ></input>
-                  <button className='search__button'><i className="fas fa-search"></i></button>
-              </form>
             </div>
           {/* </div> */}
           <div className='main__body'>

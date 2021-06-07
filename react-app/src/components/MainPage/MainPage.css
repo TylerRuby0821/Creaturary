@@ -63,9 +63,9 @@
 
 .positional__helper{
   position: static;
-  /*top: 100px;
-  left: 650px; */
-  /* height: 100vh; */
+  top: 100px;
+  left: 650px;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: row;

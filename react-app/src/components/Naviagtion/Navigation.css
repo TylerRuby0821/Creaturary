@@ -1,7 +1,10 @@
 .navbar__container{
-  width: 100vw;
-  position: static;
+  position: fixed;
+  top:0;
+  left: 100px;
+  width: 90vw;
   display: flex;
+  justify-content: center;
   align-items: center;
   margin-top: 10px;
 
@@ -40,7 +43,7 @@
   font-family: 'Girassol', cursive;
   /* font-family: 'Creepster', cursive; */
   text-shadow: 1px 1px rgb(170, 13, 13);
-  margin-left: 210px;
+  /* margin-left: 210px; */
 }
 
 .navbar__usermenu{
@@ -69,4 +72,14 @@
   right: 10px;
   z-index: 5;
   /* background: aliceblue; */
+}
+
+.search__container{
+  /* position: absolute; */
+  /* top: 10; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-left: 40%; */
+  margin-top: 10px;
 }
