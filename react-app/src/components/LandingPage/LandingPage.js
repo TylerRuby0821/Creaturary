@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, NavLink } from 'react-router-dom';
 import { useSelector } from "react-redux";
 import './LandingPage.css'
-
+import Footer from '../Footer/Footer'
 const LandingPage = () => {
   const user = useSelector(state => state.session.user);
 
@@ -18,6 +18,7 @@ const LandingPage = () => {
         <NavLink className='landing__login--nav' to='/login'> Login </NavLink>
         <NavLink className='landing__signup--nav' to='/sign-up'> Signup </NavLink>
       </div>
+      <Footer />
     </div>
   )
 }
