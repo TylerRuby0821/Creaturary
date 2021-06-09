@@ -57,7 +57,7 @@ const Search = () => {
           {creaturesArr.length > 0 ? (
             <>
             <div>
-              <Navigation />
+              {/* <Navigation /> */}
             </div>
             <div>
               <Pagination
