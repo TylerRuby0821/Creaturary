@@ -1,7 +1,7 @@
 from flask import Blueprint, jsonify, request
 from flask_login import login_required
 from app.models import Creature, Tag, db
-from app.forms import CreatureForm
+from app.forms import CreatureForm, CreatureEditForm
 
 creature_routes = Blueprint('creatures', __name__)
 
@@ -65,7 +65,30 @@ def create_creature():
     # print('CREATURE TO DICT ----------->', creature.to_dict())
     return creature.to_dict()
   return {'errors': validation_errors_to_error_messages(form.errors)}
-  
+
+
+@creature_routes.route('/edit', methods=['PUT'])
+@login_required
+def edit_creature():
+  form = CreatureEditForm()
+  form['csrf_token'].data = request.cookies['csrf_token']
+  if form.validate_on_submit():
+    print('REQUEST', request.json)
+    creatures = Creature.query.all()
+    for creature in creatures:
+        if creature.id == request.json['id']:
+          print("CREATURE ------>", creature.name)
+          creature.name = request.json['name']
+          creature.description = request.json['description']
+          creature.tag= request.json['tag']
+          db.session.commit()
+          db.session.flush()
+          db.session.refresh(creature)
+    # print('CREATURE TO DICT ----------->', creature.to_dict())
+    return creature.to_dict()
+  return {'errors': validation_errors_to_error_messages(form.errors)}
+
+
 @creature_routes.route('/<int:id>')
 @login_required
 def get_creature(id):

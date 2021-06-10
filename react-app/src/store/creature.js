@@ -4,6 +4,7 @@ const GET_ALL_CREATURES_LORE = 'creature/GET_ALL_CREATURES_LORE'
 const GET_ALL_CREATURES_SEARCH = 'creature/GET_ALL_CREATURES_SEARCH'
 const GET_ALL_CREATURES_CUSTOM = 'creature/GET_ALL_CREATURES_CUSTOM'
 const CREATE_CREATURE = 'creature/CREATE_CREATURE'
+const EDIT_CREATURE = 'creature/EDIT_CREATURE'
 
 const getCreaturesAction = (creatures) => ({
   type: GET_ALL_CREATURES,
@@ -29,7 +30,10 @@ const createCreatureAction = (creature) => ({
   type: CREATE_CREATURE,
   payload: creature
 })
-
+const editCreatureAction = (creature) => ({
+  type: EDIT_CREATURE,
+  payload: creature
+})
 
 export const getCreatures = () => async (dispatch) => {
   // console.log('Before')
@@ -85,6 +89,26 @@ export const createCreature = (creature) => async (dispatch) => {
   return data
 }
 
+export const editCreature = (creature) => async (dispatch) => {
+  const response = await fetch ('/api/creatures/edit', {
+    method: 'PUT',
+    headers: {
+      'Content-Type' : 'application/json'
+    },
+    body: JSON.stringify(creature)
+  })
+  const data = await response.json()
+  if (data.errors) {
+    const err = new Error('Unauthorized')
+    err.errors = data.errors;
+    throw err;
+} else
+  dispatch(editCreatureAction(data))
+  // console.log("DATA ------>", data)
+  return data
+
+}
+
 const initialState = {};
 
 export default function reducer(state = initialState, action) {
@@ -108,6 +132,10 @@ export default function reducer(state = initialState, action) {
             const newCreatureState = {...state}
             newCreatureState[action.payload.id] = action.payload
             return newCreatureState
+        case EDIT_CREATURE:
+            const editCreatureState = {...state}
+            editCreatureState[action.payload.id] = action.payload
+            return editCreatureState
         default:
             return state;
     }
