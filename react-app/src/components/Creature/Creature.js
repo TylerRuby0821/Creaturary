@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import './Creature.css'
 import Navigation from '../Naviagtion/Navigation';
 import Popup from 'reactjs-popup';
-import {editCreature} from '../../store/creature'
+import {editCreature, getCreatures} from '../../store/creature'
 
 const Creature = () => {
   const dispatch = useDispatch()
@@ -49,13 +49,6 @@ const Creature = () => {
   // });
   // const creatures = useSelector(state => state.creature)
   // console.log("CREATURES", creatures)
-  // useEffect(() => {
-  //   (async () => {
-  //       const creat = await dispatch(getCreature(creatureId))
-  //       setcurrCreature(creat)
-  //   })()
-
-  // }, [creatureId, dispatch])
 
   const handleCreate = async (e) => {
     e.preventDefault()
