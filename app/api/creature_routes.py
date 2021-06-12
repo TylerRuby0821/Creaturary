@@ -82,8 +82,8 @@ def edit_creature():
           creature.description = request.json['description']
           creature.tag= request.json['tag']
           db.session.commit()
-          db.session.flush()
-          db.session.refresh(creature)
+          # db.session.flush()
+          # db.session.refresh(creature)
     # print('CREATURE TO DICT ----------->', creature.to_dict())
     return creature.to_dict()
   return {'errors': validation_errors_to_error_messages(form.errors)}

@@ -14,6 +14,7 @@ const Creature = () => {
   const [tag, setTag] = useState('')
   const [description, setDescription]= useState('')
   const [errors, setErrors] = useState([]);
+  const id = useParams()
 
   const allCreatures = useSelector(state => state.creature)
   // console.log('ALL CREATURES',allCreatures)
@@ -49,10 +50,12 @@ const Creature = () => {
   // });
   // const creatures = useSelector(state => state.creature)
   // console.log("CREATURES", creatures)
-
+  // const idx = Object.values(allCreatures)[]
+  // console.log("KEYS??????", idx) 
   const handleCreate = async (e) => {
     e.preventDefault()
     // console.log('TAG', tag)
+    console.log('ALL CREATURES==========>', allCreatures)
     let newCreature= {
       id: creature.id,
       name,
