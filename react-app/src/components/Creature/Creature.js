@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import './Creature.css'
@@ -10,11 +10,8 @@ const Creature = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const [displayCreate, setDisplayCreate] = useState(false)
-  const [name, setName] = useState('')
-  const [tag, setTag] = useState('')
-  const [description, setDescription]= useState('')
+
   const [errors, setErrors] = useState([]);
-  const id = useParams()
 
   const allCreatures = useSelector(state => state.creature)
   // console.log('ALL CREATURES',allCreatures)
@@ -41,6 +38,11 @@ const Creature = () => {
       cTag = {...allTags[t]}
     }
   }
+
+  const [name = creature.name, setName] = useState(creature.name)
+  const [tag = creature.tag, setTag] = useState(creature.tag)
+  const [description = creature.description, setDescription]= useState(creature.description)
+  // console.log(name)
   // console.log('TAG----->', tag)
   // console.log(creature)
   // console.log(creature)
@@ -67,7 +69,6 @@ const Creature = () => {
       idx
     }
     const editedCreature = await dispatch(editCreature(newCreature)).catch(err => setErrors(err.errors))
-    // console.log('CREATURE ------->', creature)
     if (editedCreature) {
       history.push(`/creatures/${creature.id}`)
       await dispatch(getCreatures())
@@ -101,7 +102,7 @@ const Creature = () => {
               <label name='name' className='form__label'>Creature Name: </label>
               <input
               type='text'
-              defaultValue={creature.name}
+              value={name}
               onChange={(e) => setName(e.target.value)}></input>
             </div>
 
@@ -119,7 +120,7 @@ const Creature = () => {
               <label name ='description' className='form__label'>Creature Description:</label>
               <textarea type='textarea'
               className='description'
-              defaultValue={creature.description}
+              defaultValue={description}
               onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
 
