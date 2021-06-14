@@ -21,14 +21,16 @@ const Creature = () => {
   const { creatureId } = useParams();
   // console.log(allCreatures[0].name)
   let creature = {};
+  let creatureArr = [];
   for (const creat in allCreatures) {
     // console.log("CREAT", allCreatures[creat].id)
     if (allCreatures[creat].id === parseInt(creatureId)){
       creature = {...allCreatures[creat]}
 
    }
+   creatureArr.push(allCreatures[creat].name)
   }
-
+  // console.log('CREATURES ARRAY ------>', creatureArr)
   const allTags = useSelector(state => state.tag)
   // console.log('ALL TAGS', allTags)
   let cTag = {};
@@ -51,21 +53,24 @@ const Creature = () => {
   // const creatures = useSelector(state => state.creature)
   // console.log("CREATURES", creatures)
   // const idx = Object.values(allCreatures)[]
-  // console.log("KEYS??????", idx) 
+  // console.log("KEYS??????", idx)
   const handleCreate = async (e) => {
     e.preventDefault()
-    // console.log('TAG', tag)
-    console.log('ALL CREATURES==========>', allCreatures)
+    // console.log('CREATURES==========>', creatureArr)
+    const idx = creatureArr.indexOf(creature.name)
+    // console.log('IDX------>', idx)
     let newCreature= {
       id: creature.id,
       name,
       tag,
-      description
+      description,
+      idx
     }
     const editedCreature = await dispatch(editCreature(newCreature)).catch(err => setErrors(err.errors))
     // console.log('CREATURE ------->', creature)
     if (editedCreature) {
       history.push(`/creatures/${creature.id}`)
+      await dispatch(getCreatures())
       setDisplayCreate(false)
     }
   }
@@ -114,7 +119,8 @@ const Creature = () => {
               <label name ='description' className='form__label'>Creature Description:</label>
               <textarea type='textarea'
               className='description'
-              defaultValue={creature.description}
+              value={creature.description}
+              contentEditable = 'true'
               onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
 

@@ -73,7 +73,7 @@ def edit_creature():
   form = CreatureEditForm()
   form['csrf_token'].data = request.cookies['csrf_token']
   if form.validate_on_submit():
-    print('REQUEST', request.json)
+    # print('REQUEST', request.json)
     creatures = Creature.query.all()
     for creature in creatures:
         if creature.id == request.json['id']:

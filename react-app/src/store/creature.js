@@ -134,7 +134,7 @@ export default function reducer(state = initialState, action) {
             return newCreatureState
         case EDIT_CREATURE:
             const editCreatureState = {...state}
-            editCreatureState[action.payload.id] = action.payload
+            editCreatureState[action.payload.idx] = action.payload
             return editCreatureState
         default:
             return state;
