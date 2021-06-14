@@ -102,7 +102,7 @@ const Creature = () => {
               <input
               type='text'
               defaultValue={creature.name}
-              onChange={(e)=> setName(e.target.value)}></input>
+              onChange={(e) => setName(e.target.value)}></input>
             </div>
 
             <div className='form__item'>
