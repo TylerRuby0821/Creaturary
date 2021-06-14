@@ -119,8 +119,7 @@ const Creature = () => {
               <label name ='description' className='form__label'>Creature Description:</label>
               <textarea type='textarea'
               className='description'
-              value={creature.description}
-              contentEditable = 'true'
+              defaultValue={creature.description}
               onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
 
