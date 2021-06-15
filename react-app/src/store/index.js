@@ -3,12 +3,14 @@ import thunk from 'redux-thunk';
 import session from './session'
 import creature from './creature'
 import tag from './tag'
-
+import image from './image'
 
 const rootReducer = combineReducers({
     session,
     creature,
-    tag
+    tag,
+    image
+
 });
 
 let enhancer;
