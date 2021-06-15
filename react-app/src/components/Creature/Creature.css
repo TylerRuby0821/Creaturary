@@ -9,7 +9,7 @@
 }
 
 .creature__decription{
-  display: flex;
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -23,6 +23,11 @@
   background-color: gray;
   border: 1px double black;
   white-space: pre-wrap;
+}
+.edit__creature{
+  margin-bottom: 10px;
+  text-align: end;
+  cursor: pointer;
 }
 
 .creature__name{
@@ -52,4 +57,26 @@
   background-color: rgb(33, 189, 33);
   /* border-radius: 30%; */
   border: 1px double black;
+}
+
+.submit__create--edit{
+  /* align-items: center;
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+  text-align: center;
+  width: auto;
+  height: 50px;
+  margin-top: 10px;
+  margin-left: 15%;
+  display: block;
+  background-color: whitesmoke;
+  text-decoration: none;
+  color: black;
+  border-left: 1px solid grey;
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  font-family: 'Girassol', cursive;
+  font-size: 22px;
+  cursor: pointer;
 }
