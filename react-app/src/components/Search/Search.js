@@ -35,15 +35,15 @@ const Search = () => {
   // }, [dispatch])
 
 
-  if(creaturesArr){
-     creaturesArr.map(creature => {
-      return (
-        <Result key={creature.id} creature={creature}/>
-      )
+  // if(creaturesArr){
+  //    creaturesArr.map(creature => {
+  //     return (
+  //       <Result key={creature.id} creature={creature}/>
+  //     )
 
-  })} else{
-      return <div> No Creatures to display!</div>
-  }
+  // })} else{
+  //     return <div> No Creatures to display!</div>
+  // }
 
 
 

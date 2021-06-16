@@ -4,6 +4,7 @@ import { useDispatch} from "react-redux";
 import { authenticate } from "./store/session";
 import {getCreatures} from './store/creature'
 import {getTags} from './store/tag'
+import {getImages} from './store/image'
 import LoginForm from "./components/auth/LoginForm";
 import SignUpForm from "./components/auth/SignUpForm";
 import LandingPage from './components/LandingPage/LandingPage'
@@ -15,7 +16,6 @@ import SearchCustom from './components/Search/SearchCustom'
 import Search from './components/Search/Search'
 import ProtectedRoute from './components/auth/ProtectedRoute'
 
-
 function App() {
   const dispatch = useDispatch()
 
@@ -26,6 +26,7 @@ function App() {
   useEffect(() => {
     dispatch(getCreatures())
     dispatch(getTags())
+    dispatch(getImages())
   }, [dispatch])
 
 

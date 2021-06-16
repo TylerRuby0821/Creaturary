@@ -10,57 +10,43 @@ const Creature = () => {
   const dispatch = useDispatch()
   const history = useHistory()
   const [displayCreate, setDisplayCreate] = useState(false)
-
   const [errors, setErrors] = useState([]);
-
   const allCreatures = useSelector(state => state.creature)
-  // console.log('ALL CREATURES',allCreatures)
   const { creatureId } = useParams();
-  // console.log(allCreatures[0].name)
+  const images = useSelector(state => state.image)
+  const imageArr = []
+
+  //Creature Array
   let creature = {};
   let creatureArr = [];
   for (const creat in allCreatures) {
-    // console.log("CREAT", allCreatures[creat].id)
     if (allCreatures[creat].id === parseInt(creatureId)){
       creature = {...allCreatures[creat]}
-
    }
    creatureArr.push(allCreatures[creat].name)
   }
-  // console.log('CREATURES ARRAY ------>', creatureArr)
+  //Tags assignment
   const allTags = useSelector(state => state.tag)
-  // console.log('ALL TAGS', allTags)
   let cTag = {};
   for (const t in allTags) {
-    // console.log("T------->", allTags[t].type)
-    // console.log('CREATURE', creature)
     if (allTags[t].id === creature.tag_id){
       cTag = {...allTags[t]}
     }
   }
 
+  //Image assignment
+  for (const image in images) {
+    if (images[image].creature_id === Number(creatureId))
+      imageArr.push(images[image])
+  }
+
   const [name = creature.name, setName] = useState(creature.name)
   const [tag = creature.tag, setTag] = useState(creature.tag)
   const [description = creature.description, setDescription]= useState(creature.description)
-  // console.log(name)
-  // console.log('TAG----->', tag)
-  // console.log(creature)
-  // console.log(creature)
-  // const dispatch = useDispatch()
-  // allCreatures.forEach(creat => {
-  //   if (creature.id === creatureId){
-  //      creature = creat
-  //   }
-  // });
-  // const creatures = useSelector(state => state.creature)
-  // console.log("CREATURES", creatures)
-  // const idx = Object.values(allCreatures)[]
-  // console.log("KEYS??????", idx)
+
   const handleCreate = async (e) => {
     e.preventDefault()
-    // console.log('CREATURES==========>', creatureArr)
     const idx = creatureArr.indexOf(creature.name)
-    // console.log('IDX------>', idx)
     let newCreature= {
       id: creature.id,
       name,
@@ -96,7 +82,7 @@ const Creature = () => {
             <div className='create__errors'>
               {errors.map((error) => (
                 <div key={error} className='error__message'>{error}</div>
-              ))}
+                ))}
             </div>
             <div className='form__item'>
               <label name='name' className='form__label'>Creature Name: </label>
@@ -127,11 +113,14 @@ const Creature = () => {
             <button className='submit__create--edit'>Edit Creature</button>
           </form>
         </Popup>
+        {imageArr.length >0 &&
+          <div><img className='creature__picture' src={imageArr[0].url}></img></div>
+        }
           {creature.description}
         </div>
       </div>
     </div>
     )
-}
+  }
 
 export default Creature;

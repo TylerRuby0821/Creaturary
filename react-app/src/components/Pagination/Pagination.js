@@ -13,11 +13,11 @@ const Pagination = ({data, Result, title, pageLimit, creatures}) => {
     setCurrentPage((page) => page - 1)
   }
 
-  const jumpPage = () => {
-    const jumpPage = ((event) => console.log(event))
+  // const jumpPage = () => {
+  //   const jumpPage = ((event) => console.log(event))
 
-    setCurrentPage(jumpPage)
-  }
+  //   setCurrentPage(jumpPage)
+  // }
 
   const getResults = () => {
     const startInd = currentPage * creatures - creatures
@@ -25,10 +25,10 @@ const Pagination = ({data, Result, title, pageLimit, creatures}) => {
     return data.slice(startInd, endInd)
   }
 
-  const pageNumbers = () => {
-    let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit
-    return new Array(pageLimit).fill().map((_, idx) => Number(start + idx + 1))
-  }
+  // const pageNumbers = () => {
+  //   let start = Math.floor((currentPage - 1) / pageLimit) * pageLimit
+  //   return new Array(pageLimit).fill().map((_, idx) => Number(start + idx + 1))
+  // }
 
   return (
     <>

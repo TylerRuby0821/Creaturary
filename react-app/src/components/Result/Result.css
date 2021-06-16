@@ -8,7 +8,7 @@
 }
 
 .result__container{
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,7 @@
   /* margin-top: 100px; */
   height: 100px;
   width: 500px;
-  padding: 10px;
+  padding-left: 10px;
   /* margin: 10px; */
   box-sizing: border-box;
   margin-bottom: 10px;
@@ -32,11 +32,26 @@
 }
 
 .result__link{
+
   text-decoration: none;
   color: black;
+
+}
+.info__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Thumbnail Name Name"
+    "Thumbnail Description Description";
+  align-items: center;
+  width: 400px;
+
 }
 
 .result__name{
+  grid-area: Name;
   font-size: 22px;
   font-weight: 700;
   font-family: 'Creepster', cursive;
@@ -45,9 +60,19 @@
 }
 
 .result__description{
+  grid-area: Description;
   height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
   font-family: 'Girassol', cursive;
   font-weight: 500;
+}
+
+.result__thumbnail{
+  grid-area: Thumbnail;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  justify-content: start;
+  border-radius: 3px;
 }
