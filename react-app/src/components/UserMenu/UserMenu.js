@@ -104,7 +104,7 @@ const UserMenu = () => {
               className='description'
               onChange={(e) => setDescription(e.target.value)}></textarea>
             </div>
-            <div>
+            <div className='form__item'>
               <input
                 type="file"
                 accept="image/*"
