@@ -1,5 +1,5 @@
-import React, { useState} from 'react';
-import { NavLink, Redirect, useHistory } from 'react-router-dom';
+import React from 'react';
+import { NavLink, Redirect} from 'react-router-dom';
 import { useSelector} from 'react-redux'
 import Navigation from '../Naviagtion/Navigation'
 import './MainPage.css'
