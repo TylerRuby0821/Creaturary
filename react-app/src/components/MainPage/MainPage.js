@@ -22,7 +22,7 @@ const MainPage = () => {
 
   return (
     <div>
-      {(user) ?
+      {/* {(user) ? */}
         <div className='main__container'>
           <Navigation />
           {/* <div className='positional__helper'> */}
@@ -51,8 +51,9 @@ const MainPage = () => {
               </NavLink>
             </div>
           </div>
+          <div className='favorites__header'> My Favorites: </div>
         </div>
-        : Redirect('/')}
+        {/* : Redirect('/')} */}
     </div>
   )
 }
