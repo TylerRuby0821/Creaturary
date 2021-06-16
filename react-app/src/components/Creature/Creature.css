@@ -80,3 +80,8 @@
   font-size: 22px;
   cursor: pointer;
 }
+
+.creature__picture{
+  height: 200px;
+  width: 200px;
+}

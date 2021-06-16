@@ -9,9 +9,6 @@ const Result = (props) => {
   const images = useSelector(state => state.image)
   const imageArr = []
   for (const image in images) {
-    // console.log('CREAT', allCreatures[creat])
-    // console.log('QUERY', query)
-    // console.log('TEST', test)
     if (images[image].creature_id === id)
       imageArr.push(images[image])
   }
