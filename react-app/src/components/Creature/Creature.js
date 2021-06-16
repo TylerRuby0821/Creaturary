@@ -38,11 +38,6 @@ const Creature = () => {
   for (const image in images) {
     if (images[image].creature_id === Number(creatureId))
       imageArr.push(images[image])
-    console.log(images[image].creature_id)
-    console.log(creatureId)
-    console.log(image)
-    console.log(images)
-    console.log(imageArr)
   }
 
   const [name = creature.name, setName] = useState(creature.name)
