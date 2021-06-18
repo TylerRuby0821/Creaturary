@@ -5,7 +5,7 @@
 }
 
 .main__body{
-  height: 80vh;
+  height: 60vh;
   width: 80vw;
   display: flex;
   flex-direction: row;
@@ -50,7 +50,7 @@
   font-style: italic;
   position: relative;
   bottom: 85px;
-  font-family: 'Girassol', cursive;
+  font-family: 'Creepster', cursive;
   cursor: pointer;
   color: black;
   text-shadow: 1px 1px rgb(187, 180, 180);
@@ -87,7 +87,7 @@
 
 .main__search--header{
   font-size: 60px;
-  font-family: 'Girassol', cursive;
+  font-family: 'Creepster', cursive;
   margin-bottom: 30px;
   text-shadow: 2px 2px rgb(170, 13, 13);
 }
@@ -97,4 +97,11 @@
   box-sizing: border-box;
   box-shadow: 1px 1px 1px red;
   border-radius: 9%;
+}
+.favorites__header{
+  font-family: 'Creepster', cursive;
+  text-shadow: 1px 1px rgb(170, 13, 13);
+  font-size: 32px;
+  height: 20vh;
+  width: 80vw;
 }

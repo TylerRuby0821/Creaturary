@@ -24,8 +24,8 @@ const Result = (props) => {
                 }
                 <div className='result__name'>{name}</div>
                 <div className='result__description'>{description}</div>
+              
             </div>
-
           </NavLink>
         </div>
       </div>

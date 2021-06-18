@@ -86,3 +86,17 @@
   width: 400px;
   margin-bottom: 20px;
 }
+
+.favorite_icon, .fa-heart{
+  cursor: pointer;
+}
+/* .favorite_icon, .far-heart{
+  cursor: pointer;
+} */
+
+.top__bar{
+  display: flex;
+  justify-content: end;
+  align-items:end;
+  justify-content: space-between;
+}

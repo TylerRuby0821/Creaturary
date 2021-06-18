@@ -71,9 +71,14 @@ const Creature = () => {
         {cTag.type === 'Custom' ? <span className='creature__tag--Custom'>{cTag.type}</span> : <span className='creature__tag--Lore'>{cTag.type}</span> }
         {/* <span className='creature__tag'>{tag.type}</span> */}
         <div className='creature__decription'>
-          <div className='edit__creature'
-                onClick={() => setDisplayCreate(true)}
-          >Edit</div>
+        <div className='top__bar'>
+          <div className='favorite__icon'>
+                    <i className="far fa-heart"></i>
+          </div>
+            <div className='edit__creature'
+                  onClick={() => setDisplayCreate(true)}
+            >Edit</div>
+        </div>
           <Popup
           open={displayCreate}
           onClose={()=> setDisplayCreate(false)}
