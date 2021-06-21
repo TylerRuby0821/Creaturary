@@ -5,6 +5,7 @@ import './Creature.css'
 import Navigation from '../Naviagtion/Navigation';
 import Popup from 'reactjs-popup';
 import {editCreature, getCreatures} from '../../store/creature'
+import { addFavorite, removeFavorite } from '../../store/favorite';
 
 const Creature = () => {
   const dispatch = useDispatch()
@@ -15,7 +16,7 @@ const Creature = () => {
   const { creatureId } = useParams();
   const images = useSelector(state => state.image)
   const imageArr = []
-
+  const [favorited, setFavorited] = useState(false)
   //Creature Array
   let creature = {};
   let creatureArr = [];
@@ -62,6 +63,24 @@ const Creature = () => {
     }
   }
 
+  const handleFavorite = async (e) => {
+    e.preventDefault()
+    let favorite = {
+      creature_id: creature.id
+    }
+    const favoritedCreature = await dispatch(addFavorite(favorite))
+    setFavorited(true)
+  }
+
+  const handleUnfavorite = async (e) => {
+    e.preventDefault()
+    let unFavorite = {
+      creature_id: creature.id
+    }
+    const unfavoritedCreature = await dispatch(removeFavorite(unFavorite))
+    setFavorited(false)
+  }
+
   return (
     <div>
       <Navigation />
@@ -72,9 +91,15 @@ const Creature = () => {
         {/* <span className='creature__tag'>{tag.type}</span> */}
         <div className='creature__decription'>
         <div className='top__bar'>
-          <div className='favorite__icon'>
+          {favorited ?
+          <div className='favorite__icon' onClick={handleUnfavorite}>
+                    <i class="fas fa-heart"></i>
+          </div>
+          :
+          <div className='favorite__icon' onClick={handleFavorite}>
                     <i className="far fa-heart"></i>
           </div>
+          }
             <div className='edit__creature'
                   onClick={() => setDisplayCreate(true)}
             >Edit</div>
