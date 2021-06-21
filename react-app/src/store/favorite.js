@@ -18,7 +18,6 @@ const removeFavoriteAction = (favorite) => ({
 })
 
 export const getFavorites = () => async (dispatch) => {
-  // console.log('Before')
   const response = await fetch('/api/favorites/')
   const data = await response.json()
   dispatch(getFavoritesAction(data.favorites))
@@ -26,7 +25,7 @@ export const getFavorites = () => async (dispatch) => {
 }
 
 export const addFavorite = (favorite) => async (dispatch) => {
-  const response = await fetch ('/api/favorites/add/', {
+  const response = await fetch ('/api/favorites/add', {
     method: 'POST',
     headers: {
       'Content-Type' : 'application/json'
@@ -45,7 +44,7 @@ export const addFavorite = (favorite) => async (dispatch) => {
 }
 
 export const removeFavorite = async (dispatch) => {
-  const response = await fetch('/api/favorites/remove/', {
+  const response = await fetch('/api/favorites/remove', {
     method: 'DELETE',
   })
   const data = await response.json()
@@ -70,9 +69,9 @@ export default function reducer(state = initialState, action) {
             addFavoriteState[action.payload.id] = action.payload
             return addFavoriteState
         case REMOVE_FAVORITE:
-            const removeFavoriteState = {...state}
-            removeFavoriteState[action.payload.id].destroy()
-            return removeFavoriteState
+            return{
+              ...state, favorites:state.favorite.filter((favorite, i ) => i !== action.payload)
+            }
         default:
             return state;
     }

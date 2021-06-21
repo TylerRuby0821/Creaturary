@@ -98,10 +98,19 @@
   box-shadow: 1px 1px 1px red;
   border-radius: 9%;
 }
-.favorites__header{
+
+.fav__container{
+  height: 20vh;
+  width: 80vw;
+}
+
+.fav__header{
   font-family: 'Creepster', cursive;
   text-shadow: 1px 1px rgb(170, 13, 13);
   font-size: 32px;
-  height: 20vh;
-  width: 80vw;
+
+}
+
+.fav__results{
+
 }

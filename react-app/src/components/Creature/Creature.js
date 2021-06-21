@@ -15,16 +15,16 @@ const Creature = () => {
   const allCreatures = useSelector(state => state.creature)
   const { creatureId } = useParams();
   const images = useSelector(state => state.image)
+  const favorites = useSelector(state => state.favorite)
   const imageArr = []
-  const [favorited, setFavorited] = useState(false)
   //Creature Array
   let creature = {};
   let creatureArr = [];
   for (const creat in allCreatures) {
     if (allCreatures[creat].id === parseInt(creatureId)){
       creature = {...allCreatures[creat]}
-   }
-   creatureArr.push(allCreatures[creat].name)
+    }
+    creatureArr.push(allCreatures[creat].name)
   }
   //Tags assignment
   const allTags = useSelector(state => state.tag)
@@ -35,10 +35,15 @@ const Creature = () => {
     }
   }
 
+  let favArr = []
+  for (const fav in favorites) {
+     favArr.push(favorites[fav])
+  }
+
   //Image assignment
   for (const image in images) {
     if (images[image].creature_id === Number(creatureId))
-      imageArr.push(images[image])
+    imageArr.push(images[image])
   }
 
   const [name = creature.name, setName] = useState(creature.name)
@@ -62,14 +67,16 @@ const Creature = () => {
       setDisplayCreate(false)
     }
   }
+  const isItThere = favArr.filter(e=> e.id === creature.id)
+  const [favorited, setFavorited] = useState(isItThere.length > 0)
 
   const handleFavorite = async (e) => {
     e.preventDefault()
     let favorite = {
       creature_id: creature.id
     }
-    const favoritedCreature = await dispatch(addFavorite(favorite))
-    setFavorited(true)
+    await dispatch(addFavorite(favorite))
+    setFavorited(favorited)
   }
 
   const handleUnfavorite = async (e) => {
@@ -77,8 +84,8 @@ const Creature = () => {
     let unFavorite = {
       creature_id: creature.id
     }
-    const unfavoritedCreature = await dispatch(removeFavorite(unFavorite))
-    setFavorited(false)
+    await dispatch(removeFavorite(unFavorite))
+    setFavorited(favorited)
   }
 
   return (
@@ -93,7 +100,7 @@ const Creature = () => {
         <div className='top__bar'>
           {favorited ?
           <div className='favorite__icon' onClick={handleUnfavorite}>
-                    <i class="fas fa-heart"></i>
+                    <i className="fas fa-heart"></i>
           </div>
           :
           <div className='favorite__icon' onClick={handleFavorite}>
@@ -144,7 +151,7 @@ const Creature = () => {
           </form>
         </Popup>
         {imageArr.length >0 &&
-          <div><img className='creature__picture' src={imageArr[0].url}></img></div>
+          <div><img className='creature__picture' src={imageArr[0].url} alt='Nothing to show yet.'></img></div>
         }
           {creature.description}
         </div>

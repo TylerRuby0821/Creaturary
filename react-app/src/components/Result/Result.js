@@ -4,7 +4,6 @@ import { NavLink } from 'react-router-dom';
 import './Result.css'
 
 const Result = (props) => {
-  // console.log('CREATURE', creature
   const {id, name, description} = props.data
   const images = useSelector(state => state.image)
   const imageArr = []
@@ -20,11 +19,12 @@ const Result = (props) => {
           <NavLink to={`/creatures/${id}`} className='result__link'>
             <div className='info__container'>
               {imageArr.length > 0 &&
-                <div className='result__thumbnail'><img className='result__thumbnail' src={imageArr[0].url}></img></div>
+                <div className='result__thumbnail'><img className='result__thumbnail' src={imageArr[0].url} alt='Nothing to show yet.'></img></div>
+
                 }
                 <div className='result__name'>{name}</div>
                 <div className='result__description'>{description}</div>
-              
+
             </div>
           </NavLink>
         </div>
