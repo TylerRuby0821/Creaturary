@@ -79,12 +79,9 @@ const Creature = () => {
     setFavorited(favorited)
   }
 
-  const handleUnfavorite = async (e) => {
+  const handleUnfavorite = (e) => {
     e.preventDefault()
-    let unFavorite = {
-      creature_id: creature.id
-    }
-    await dispatch(removeFavorite(unFavorite))
+    dispatch(removeFavorite(creature))
     setFavorited(favorited)
   }
 

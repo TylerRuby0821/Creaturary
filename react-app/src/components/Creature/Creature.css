@@ -89,6 +89,7 @@
 
 .favorite_icon, .fa-heart{
   cursor: pointer;
+  color: rgb(170, 13, 13);
 }
 /* .favorite_icon, .far-heart{
   cursor: pointer;

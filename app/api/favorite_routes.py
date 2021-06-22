@@ -21,10 +21,17 @@ def add_favorite():
     db.session.commit()
     return favorite.to_dict()
 
-@favorite_routes.route('/remove', methods=["DELETE"])
-def remove_favorite(creature):
-  creat_id = creature.id
-  favorite = Userfavorite.query(current_user.id == Userfavorite.user_id and creat_id == Userfavorite.creature_id)
-  db.session.delete(favorite)
+@favorite_routes.route('/<int:id>', methods=["DELETE"])
+def remove_favorite(id):
+  print('ID---------->', id)
+  userCreatures = Userfavorite.query.filter(Userfavorite.user_id == current_user.id).all()
+  print('USERCREATURES----------->>', userCreatures)
+  testCreatures = [creature.id for creature in userCreatures]
+  print('TEST CREATURES -------->>', testCreatures)
+  deleteCreature = [creature for creature in userCreatures if creature.creature_id == id]
+  print('DELETED CREATURE---------->>', deleteCreature)
+  creature = deleteCreature[0]
+  print('CREATURE---------->', creature)
+  db.session.delete(creature)
   db.session.commit()
-  return
+  return creature.to_dict()
