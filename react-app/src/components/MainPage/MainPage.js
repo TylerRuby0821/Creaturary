@@ -7,6 +7,7 @@ import Result from '../Result/Result'
 import Pagination from '../Pagination/Pagination';
 
 const MainPage = () => {
+  
   const favorites = useSelector(state => state.favorite)
 
   let favArr = []

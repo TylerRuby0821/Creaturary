@@ -1,11 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import './Creature.css'
 import Navigation from '../Naviagtion/Navigation';
 import Popup from 'reactjs-popup';
 import {editCreature, getCreatures} from '../../store/creature'
-import { addFavorite, removeFavorite } from '../../store/favorite';
+import { addFavorite, getFavorites, removeFavorite } from '../../store/favorite';
 
 const Creature = () => {
   const dispatch = useDispatch()
@@ -70,18 +70,24 @@ const Creature = () => {
   const isItThere = favArr.filter(e=> e.id === creature.id)
   const [favorited, setFavorited] = useState(isItThere.length > 0)
 
+  useEffect(() => {
+   
+  }, [favorites])
+
   const handleFavorite = async (e) => {
     e.preventDefault()
     let favorite = {
       creature_id: creature.id
     }
     await dispatch(addFavorite(favorite))
+    dispatch(getFavorites())
     setFavorited(favorited)
   }
 
   const handleUnfavorite = (e) => {
     e.preventDefault()
     dispatch(removeFavorite(creature))
+    dispatch(getFavorites())
     setFavorited(favorited)
   }
 

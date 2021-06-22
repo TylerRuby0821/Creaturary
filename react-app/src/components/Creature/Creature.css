@@ -95,6 +95,10 @@
   cursor: pointer;
 } */
 
+.favorite_icon:hover, .fa-heart:hover{
+  transform: translate(2px, 2px);
+}
+
 .top__bar{
   display: flex;
   justify-content: flex-end;

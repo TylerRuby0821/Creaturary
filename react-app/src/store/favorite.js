@@ -53,7 +53,6 @@ export const removeFavorite = (creature) => async (dispatch) => {
   })
   const data =await response.json()
   dispatch(removeFavoriteAction(data))
-  console.log('DATA------>',data)
   return data
 }
 
