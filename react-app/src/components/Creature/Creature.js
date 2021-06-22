@@ -17,6 +17,7 @@ const Creature = () => {
   const images = useSelector(state => state.image)
   const favorites = useSelector(state => state.favorite)
   const imageArr = []
+
   //Creature Array
   let creature = {};
   let creatureArr = [];
@@ -35,10 +36,6 @@ const Creature = () => {
     }
   }
 
-  let favArr = []
-  for (const fav in favorites) {
-     favArr.push(favorites[fav])
-  }
 
   //Image assignment
   for (const image in images) {
@@ -67,12 +64,19 @@ const Creature = () => {
       setDisplayCreate(false)
     }
   }
+
+  let favArr = []
+  for (const fav in favorites) {
+     favArr.push(favorites[fav])
+  }
   const isItThere = favArr.filter(e=> e.id === creature.id)
   const [favorited, setFavorited] = useState(isItThere.length > 0)
 
   useEffect(() => {
-   
-  }, [favorites])
+    // dispatch(getFavorites())
+    setFavorited(favorited)
+    console.log("FAVORITED----->", favorited)
+  }, [favorited, dispatch])
 
   const handleFavorite = async (e) => {
     e.preventDefault()
@@ -81,14 +85,16 @@ const Creature = () => {
     }
     await dispatch(addFavorite(favorite))
     dispatch(getFavorites())
-    setFavorited(favorited)
+    setFavorited(!favorited)
+    console.log("FAVORITED----->", favorited)
   }
 
   const handleUnfavorite = (e) => {
     e.preventDefault()
     dispatch(removeFavorite(creature))
     dispatch(getFavorites())
-    setFavorited(favorited)
+    setFavorited(!favorited)
+    console.log("FAVORITED----->", favorited)
   }
 
   return (

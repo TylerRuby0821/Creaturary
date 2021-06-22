@@ -7,7 +7,7 @@ import Result from '../Result/Result'
 import Pagination from '../Pagination/Pagination';
 
 const MainPage = () => {
-  
+
   const favorites = useSelector(state => state.favorite)
 
   let favArr = []
@@ -15,9 +15,9 @@ const MainPage = () => {
      favArr.push(favorites[fav])
   }
 
-  favArr.sort((a, b) => {
-    return a.name.localeCompare(b.name)  //Sort Function referenced from Stack Overflow
-  })
+  // favArr.sort((a, b) => {
+  //   return a.name.localeCompare(b.name)  //Sort Function referenced from Stack Overflow
+  // })
   //https://stackoverflow.com/questions/8900732/sort-objects-in-an-array-alphabetically-on-one-property-of-the-array
 
   return (
@@ -27,10 +27,10 @@ const MainPage = () => {
           <Navigation />
           {/* <div className='positional__helper'> */}
             <div className='main__search--container'>
-              <p className='main__search--header'>Peak behind the curtain...</p>
 
             </div>
           {/* </div> */}
+          <p className='main__search--header'>Peak behind the curtain...</p>
           <div className='main__body'>
             <div className='main__body--lore'>
               <NavLink to='/creatures/lore'>
@@ -55,20 +55,15 @@ const MainPage = () => {
             <div className='fav__header'> My Favorites:</div>
             <div className='fav__results'>
               {favArr.length > 0 ? (
-                <>
-                <div>
-                  {/* <Navigation /> */}
-                </div>
-                <div>
+                <div className='fav__results--map'>
                   <Pagination
                     data = {favArr}
                     Result = {Result}
                     title = ''
                     pagelimit = {5}
-                    creatures ={6}
+                    creatures ={4}
                   />
                 </div>
-                </>
               ) : (
                 <h1> No Creatures to show!</h1>
               )}
