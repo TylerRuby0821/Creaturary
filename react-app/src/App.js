@@ -22,13 +22,13 @@ function App() {
 
   useEffect(() => {
     dispatch(authenticate())
+    dispatch(getFavorites())
   }, [dispatch]);
 
   useEffect(() => {
     dispatch(getCreatures())
     dispatch(getTags())
     dispatch(getImages())
-    dispatch(getFavorites())
   }, [dispatch])
 
 
