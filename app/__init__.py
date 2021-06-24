@@ -11,6 +11,7 @@ from .api.auth_routes import auth_routes
 from .api.creature_routes import creature_routes
 from .api.tag_routes import tag_routes
 from .api.image_routes import image_routes
+from .api.favorite_routes import favorite_routes
 
 from .seeds import seed_commands
 
@@ -37,6 +38,7 @@ app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(creature_routes, url_prefix='/api/creatures')
 app.register_blueprint(tag_routes, url_prefix='/api/tags')
 app.register_blueprint(image_routes, url_prefix='/api/images')
+app.register_blueprint(favorite_routes, url_prefix='/api/favorites')
 
 db.init_app(app)
 Migrate(app, db)

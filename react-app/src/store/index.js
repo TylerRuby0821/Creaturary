@@ -4,12 +4,14 @@ import session from './session'
 import creature from './creature'
 import tag from './tag'
 import image from './image'
+import favorite from './favorite'
 
 const rootReducer = combineReducers({
     session,
     creature,
     tag,
-    image
+    image,
+    favorite
 
 });
 

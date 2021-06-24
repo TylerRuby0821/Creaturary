@@ -86,3 +86,22 @@
   width: 400px;
   margin-bottom: 20px;
 }
+
+.favorite_icon, .fa-heart{
+  cursor: pointer;
+  color: rgb(170, 13, 13);
+}
+/* .favorite_icon, .far-heart{
+  cursor: pointer;
+} */
+
+.favorite_icon:hover, .fa-heart:hover{
+  transform: translate(2px, 2px);
+}
+
+.top__bar{
+  display: flex;
+  justify-content: flex-end;
+  /* align-items:flex-end; */
+  justify-content: space-between;
+}

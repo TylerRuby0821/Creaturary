@@ -1,10 +1,11 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import './Creature.css'
 import Navigation from '../Naviagtion/Navigation';
 import Popup from 'reactjs-popup';
 import {editCreature, getCreatures} from '../../store/creature'
+import { addFavorite, getFavorites, removeFavorite } from '../../store/favorite';
 
 const Creature = () => {
   const dispatch = useDispatch()
@@ -14,6 +15,7 @@ const Creature = () => {
   const allCreatures = useSelector(state => state.creature)
   const { creatureId } = useParams();
   const images = useSelector(state => state.image)
+  const favorites = useSelector(state => state.favorite)
   const imageArr = []
 
   //Creature Array
@@ -22,8 +24,8 @@ const Creature = () => {
   for (const creat in allCreatures) {
     if (allCreatures[creat].id === parseInt(creatureId)){
       creature = {...allCreatures[creat]}
-   }
-   creatureArr.push(allCreatures[creat].name)
+    }
+    creatureArr.push(allCreatures[creat].name)
   }
   //Tags assignment
   const allTags = useSelector(state => state.tag)
@@ -34,10 +36,11 @@ const Creature = () => {
     }
   }
 
+
   //Image assignment
   for (const image in images) {
     if (images[image].creature_id === Number(creatureId))
-      imageArr.push(images[image])
+    imageArr.push(images[image])
   }
 
   const [name = creature.name, setName] = useState(creature.name)
@@ -62,6 +65,38 @@ const Creature = () => {
     }
   }
 
+  let favArr = []
+  for (const fav in favorites) {
+     favArr.push(favorites[fav])
+  }
+  const isItThere = favArr.filter(e=> e.id === creature.id)
+  const [favorited, setFavorited] = useState(isItThere.length > 0)
+
+  useEffect(() => {
+    // dispatch(getFavorites())
+    setFavorited(favorited)
+    // console.log("FAVORITED----->", favorited)
+  }, [favorited, dispatch])
+
+  const handleFavorite = async (e) => {
+    e.preventDefault()
+    let favorite = {
+      creature_id: creature.id
+    }
+    await dispatch(addFavorite(favorite))
+    dispatch(getFavorites())
+    setFavorited(!favorited)
+    console.log("FAVORITED----->", favorited)
+  }
+
+  const handleUnfavorite = (e) => {
+    e.preventDefault()
+    dispatch(removeFavorite(creature))
+    dispatch(getFavorites())
+    setFavorited(!favorited)
+    console.log("FAVORITED----->", favorited)
+  }
+
   return (
     <div>
       <Navigation />
@@ -71,9 +106,20 @@ const Creature = () => {
         {cTag.type === 'Custom' ? <span className='creature__tag--Custom'>{cTag.type}</span> : <span className='creature__tag--Lore'>{cTag.type}</span> }
         {/* <span className='creature__tag'>{tag.type}</span> */}
         <div className='creature__decription'>
-          <div className='edit__creature'
-                onClick={() => setDisplayCreate(true)}
-          >Edit</div>
+        <div className='top__bar'>
+          {favorited ?
+          <div className='favorite__icon' onClick={handleUnfavorite}>
+                    <i className="fas fa-heart"></i>
+          </div>
+          :
+          <div className='favorite__icon' onClick={handleFavorite}>
+                    <i className="far fa-heart"></i>
+          </div>
+          }
+            <div className='edit__creature'
+                  onClick={() => setDisplayCreate(true)}
+            >Edit</div>
+        </div>
           <Popup
           open={displayCreate}
           onClose={()=> setDisplayCreate(false)}
@@ -114,7 +160,7 @@ const Creature = () => {
           </form>
         </Popup>
         {imageArr.length >0 &&
-          <div><img className='creature__picture' src={imageArr[0].url}></img></div>
+          <div><img className='creature__picture' src={imageArr[0].url} alt='Nothing to show yet.'></img></div>
         }
           {creature.description}
         </div>

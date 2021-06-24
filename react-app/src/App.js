@@ -15,12 +15,14 @@ import SearchAz from './components/Search/SearchAz'
 import SearchCustom from './components/Search/SearchCustom'
 import Search from './components/Search/Search'
 import ProtectedRoute from './components/auth/ProtectedRoute'
+import { getFavorites } from "./store/favorite";
 
 function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
     dispatch(authenticate())
+    dispatch(getFavorites())
   }, [dispatch]);
 
   useEffect(() => {

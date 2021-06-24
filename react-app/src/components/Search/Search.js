@@ -9,22 +9,15 @@ import Pagination from '../Pagination/Pagination'
 const Search = () => {
   const query = useLocation()
   const test = query.search.slice(1)
-  // const search = props.search
-  // console.log('SEARCH', search)
-  const allCreatures = useSelector(state => state.creature)
-  // const dispatch = useDispatch();
-  // const [creatures, setCreatures] = useState({})
-  // console.log("Creatures = ", allCreatures)
 
+  const allCreatures = useSelector(state => state.creature)
   let creaturesArr = []
   for (const creat in allCreatures) {
-    // console.log('CREAT', allCreatures[creat])
-    // console.log('QUERY', query)
-    // console.log('TEST', test)
+
     if (allCreatures[creat].name.toLowerCase().includes(test))
       creaturesArr.push(allCreatures[creat])
   }
-  // console.log('ARRAY', creaturesArr)
+  
   creaturesArr.sort((a, b) => {
     return a.name.localeCompare(b.name)  //Sort Function referenced from Stack Overflow
   })
@@ -37,9 +30,9 @@ const Search = () => {
 
   // if(creaturesArr){
   //    creaturesArr.map(creature => {
-  //     return (
-  //       <Result key={creature.id} creature={creature}/>
-  //     )
+      // return (
+      //   <Result key={creature.id} creature={creature}/>
+      // )
 
   // })} else{
   //     return <div> No Creatures to display!</div>

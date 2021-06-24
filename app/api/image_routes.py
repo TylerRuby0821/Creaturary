@@ -15,8 +15,6 @@ def getImages():
 @image_routes.route("", methods=["POST"])
 @login_required
 def upload_image():
-    print("REQUEST------------>", request.json)
-
     url = request.json['url']
     creatureId = request.json['creature_id']
     new_image = Image(
