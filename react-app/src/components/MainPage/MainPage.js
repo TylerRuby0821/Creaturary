@@ -15,9 +15,9 @@ const MainPage = () => {
      favArr.push(favorites[fav])
   }
 
-  // favArr.sort((a, b) => {
-  //   return a.name.localeCompare(b.name)  //Sort Function referenced from Stack Overflow
-  // })
+  favArr.sort((a, b) => {
+    return a.name.localeCompare(b.name)  //Sort Function referenced from Stack Overflow
+  })
   //https://stackoverflow.com/questions/8900732/sort-objects-in-an-array-alphabetically-on-one-property-of-the-array
 
   return (

@@ -75,7 +75,7 @@ const Creature = () => {
   useEffect(() => {
     // dispatch(getFavorites())
     setFavorited(favorited)
-    console.log("FAVORITED----->", favorited)
+    // console.log("FAVORITED----->", favorited)
   }, [favorited, dispatch])
 
   const handleFavorite = async (e) => {

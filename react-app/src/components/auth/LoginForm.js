@@ -3,6 +3,7 @@ import { Redirect, NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {login } from "../../store/session";
 import './LoginForm.css'
+import {getFavorites} from '../../store/favorite'
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ const LoginForm = () => {
   };
 
   if (sessionLoaded && user) {
+    dispatch(getFavorites())
     return <Redirect to="/creatures" />;
   }
 
