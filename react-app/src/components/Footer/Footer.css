@@ -15,7 +15,8 @@
 
 .footer__header--text{
   margin-bottom: 10px;
-  font-family: 'Itim', cursive;
+  font-family: 'Creepster', cursive;
+  text-shadow: 1px 1px rgb(170, 13, 13);
   font-size: 22px;
 }
 .footer__link{
@@ -44,4 +45,10 @@
   text-decoration: none;
   color: #2c2e30;
   font-family: 'Itim', cursive;
+}
+
+.portfolio:hover{
+  transform: translate(2px, 2px);
+
+
 }

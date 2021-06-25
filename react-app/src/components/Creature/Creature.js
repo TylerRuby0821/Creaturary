@@ -86,7 +86,7 @@ const Creature = () => {
     await dispatch(addFavorite(favorite))
     dispatch(getFavorites())
     setFavorited(!favorited)
-    console.log("FAVORITED----->", favorited)
+    // console.log("FAVORITED----->", favorited)
   }
 
   const handleUnfavorite = (e) => {
@@ -94,7 +94,7 @@ const Creature = () => {
     dispatch(removeFavorite(creature))
     dispatch(getFavorites())
     setFavorited(!favorited)
-    console.log("FAVORITED----->", favorited)
+    // console.log("FAVORITED----->", favorited)
   }
 
   return (

@@ -108,6 +108,210 @@ Like Mourning Wood, the later the wave Pumpking is killed in, the more likely it
     """,
     tag_id=custom.id)
 
+  harpy = Creature(name='Harpy',
+    description="""
+       harpy is a semi-humanoid monster that originates from Greek and Roman mythology. This creature appears to have a human face and torso with clear feminine features, but possesses large feathered wings (either on its back or in place of its arms) and its legs end in the sharp talons found on birds of prey.
+
+According to Greek legend, harpies were supposedly spirits of wind and served the Erinyes by bringing them evildoers to be punished for their crimes. The name "harpy" means "snatcher", an appropriate monniker as these creatures are said to steal food from their victims while eating.
+
+Ancient Greek arts depict harpies as being creatures of remarkable beauty, whereas Byzantine and Roman writers have described harpies as being hideous beasts.
+
+Like many monsters of legend, harpies have been romanticized somewhat in modern times and their likeness has been used in various media formats. They have appeared in a number of fantasy works, such as the roleplaying game Dungeons & Dragons.
+    """,
+    tag_id=lore.id)
+
+  merfolk= Creature(name='Merfolk',
+    description="""
+      Merfolk are legendary aquatic creatures with humanoid upper bodies and fish-like tails comprising their lower bodies. These beings have appeared in myths, legends and fairy tales all over the world. Female merfolk are referred to as mermaids with males being called mermen.
+
+      Traditionally the fish tail only replaces the legs, however many modern day depictions show the tail starting at the waist. Merfolk are associated with perilous events such as floods, storms, shipwrecks, and drownings. In other folklore traditions they can be benevolent or beneficent, bestowing boons or falling in love with humans. They are commonly depicted as being highly attractive with long flowing hair and are often associated with the Sirens.
+    """,
+    tag_id=lore.id)
+
+  griffin= Creature(name='Griffin',
+    description="""
+      The griffin (also spelt griffon or gryphon) is a legendary creature said to have originated from Greek mythology, though there is evidence that the beast may have originated from ancient Egyptian or Persian artworks. The griffin, like the chimera, is an amalgamation of different parts of other animals. It has the body, tail and back legs of a lion and the head, wings and talons of an eagle.
+
+According to the folklore of various cultures, griffins were noble and proud creatures. Just as the lion was regarded as the king of beasts and the eagle the king of birds, griffins were viewed in a particularly majestic light. They were said to be guardians of exquisite and priceless treasures and artifacts. In medieval folklore, griffins were mated for life. If either griffin partner died, then the remaining griffin would live the rest of its life alone.
+    """,
+    tag_id=lore.id)
+
+  chimera= Creature(name='Chimera',
+    description="""
+      The Chimera (/kɪˈmɪərə/ or /kaɪˈmɪərə/, also Chimaera (Chimæra) (Ancient Greek: Χίμαιρα, Chímaira means 'she-goat'), according to Greek mythology, was a monstrous fire-breathing hybrid creature of Lycia in Asia Minor, composed of the parts of more than one animal. It is usually depicted as a lion, with the head of a goat protruding from its back, and a tail that might end with a snake's head. It was one of the offspring of Typhon and Echidna and a sibling of such monsters as Cerberus and the Lernaean Hydra.
+
+The term "chimera" has come to describe any mythical or fictional creature with parts taken from various animals, to describe anything composed of very disparate parts, or perceived as wildly imaginative, implausible, or dazzling.
+    """,
+    tag_id=lore.id)
+
+  centaur= Creature(name='Centaur',
+    description="""
+      A centaur is an intelligent magical being that originates from Greek mythology. It appears to have an equine body similar to a horse, but has a humanoid upper body extending from where a horse's neck and head would be. These legendary creatures have featured in numerous forms of modern fantasy literature and other media,  commonly being described as benevolent and living in harmony with nature, hiding away from humans.
+    """,
+    tag_id=lore.id)
+
+  cerberus= Creature(name='Cerberus',
+    description="""
+      In Greco-Roman mythology, Cerberus was the guardian to the Gates of Hades. Should any souls try to flee across the Styx, this terrifying hellhound will pursue them and drag them back. This monster has been envisioned as having more than just three heads (and often less) and has also been said to have serpents for tails. This classic beast has been used in many forms of literature and in other media such as video games.
+    """,
+    tag_id=lore.id)
+
+  hydra= Creature(name='Hydra',
+    description="""
+      The Hydra is a monstrous, multi-headed reptile from the myths of Ancient Greece. It made its lair in Lake Lerna. According to the myth, beneath the lake was an entrance to the Underworld, and the Hydra was it's guardian. Most of the time, it stayed in the spring of Amymone, a deep cave , only coming out to terrorize neighboring villages. Believed by some to be a type of dragon, the Hydra would meet its end at the hands of Heracles, as the second of his Twelve Labours.
+
+      Most myths agree that the hydra is a sea monster with many heads (according to the poets, more heads than the vase-painters could paint), one of which was immortal. Common depictions of the hydra give the creature a thick, strong body, a serpentine tail and webbed feet.
+    """,
+    tag_id=lore.id)
+
+  siren= Creature(name='Siren',
+    description="""
+      The Sirens are a group of magical creatures originating from Greek mythology. They are comparable to other mythical creatures such as mermaids and harpies in that they are demihuman beings possessing both avian and fish traits and reside on the ocean.
+
+According to the legend of Odysseus, the Sirens resided on a small island and would sing whenever ships sailed near. So beautiful and captivating was their song that the sailors who heard it were drawn toward the jagged rocks surrounding the island. The ships would be wrecked and the sailors aboard would perish, either by drowning or slain by the Sirens themselves. Exactly what the Sirens did to their captives is unknown but it has been implied that they ate the unfortunate sailors.
+
+When Odysseus sailed toward the Sirens' island, he ordered his crew to tie him to the mast so that he could hear the Sirens' song without being led astray. The crew were also ordered to plug their ears with beeswax so that they could not hear. Thus, Odysseus' ship safely sailed past the island and the Sirens, anguished that someone had escaped them, cast themselves into the sea and perished.
+    """,
+    tag_id=lore.id)
+
+  phoenix= Creature(name='Phoenix',
+    description="""
+      The phoenix is a legendary magical bird originating from Greek mythology. It has long been associated with the sun and is viewed as a symbol of renewal and rebirth. This creature has become widely popular, featuring in countless sources of fantasy fiction.
+    """,
+    tag_id=lore.id)
+
+  fairy= Creature(name='Fairy',
+    description="""
+      Fairies (also called fey, fae or faeries) are legendary spirit creatures that possess great magical powers. They are commonly depicted as tiny humanoid creatures with insect or butterfly wings on their backs; they are said to dwell primarily in woodland areas and dress in garments made from plants.
+
+Folklore on fairies can differ greatly between regions. Many tales describe them as a timid race that went into hiding as mankind's presence expanded across the world. Others still have depicted fairies as demons or fallen angels that are not evil enough to warrant banishment to Hell.
+
+Fairies have sometimes been regarded as wicked, fearsome creatures, but they are more often described as being good-natured, if somewhat mischievous. While they usually hide from humans, they have been known to aid them in certain instances. For example, a human might be lost in the forest and a fairy will help guide him to safety, or a fairy might happen upon an injured human and use its magic to heal them. Fairies do not like being thanked for their good deeds, at least not with words. Instead, they prefer to be given something significant to the person they have helped, something that will ensure that the good deed will always be remembered.
+    """,
+    tag_id=lore.id)
+
+  pegasus= Creature(name='Pegasus',
+    description="""
+      Pegasus is a legendary winged horse in Greek mythology. Sired by the ocean god Poseidon, this noble beast was birthed by the gorgon Medusa when she was slain by the hero Perseus. Greco-Roman poets write about his ascent to heaven after his birth and his obeisance to Zeus, king of the gods, who instructed him to bring lightning and thunder from Olympus. Friend of the Muses, Pegasus is the creator of Hippocrene, the fountain on Mt. Helicon.
+
+He was captured by the Greek hero Bellerophon near the fountain Peirene with the help of Athena and Poseidon. Pegasus allows the hero to ride him to defeat a monster, the Chimera, before realizing many other exploits. His rider, however, falls off his back trying to reach Mount Olympus. Zeus transformed him into the constellation Pegasus and placed him up in the sky.
+
+In modern times, Pegasus has been popularised in many forms of media, many of which feature numerous winged horses referred to as pegasus (plural: pegasi).
+    """,
+    tag_id=lore.id)
+
+  banshee= Creature(name='Banshee',
+    description="""
+      A banshee is a ghost or fairy that originates from Irish and Scottish folklore. Depicted as a messenger from the realm of the dead, it takes the form of a human woman when it enters the mortal plane. It emits a shrill cry of lamentation when a person is about to die, alerting the dying individual's family of their imminent passing.
+
+'Banshee' comes from the Gaelic 'Bean Sidhe' (Bean Sí (Irish), Bean Shìth (Scottish), bean shith (Scottish). The Banshee is also known to wash the bloodstains from clothes, an omen of death. Banshees are seen in three forms. A young, beautiful woman, a matronly figure or a distressed hag. Banshees are frequently described as dressed in white or grey, often having long, pale hair which they brush with a silver comb.
+    """,
+    tag_id=lore.id)
+
+  kraken= Creature(name='Kraken',
+    description="""
+      The kraken is a legendary sea-monster of enormous proportions. Described as a cephalopod resembling a giant octopus or squid, this beast is said to be capable of enveloping whole ships in the grasp of its tentacles and dragging them beneath the depths. Kraken have been spoken of in sailors' tales and featured in various works of fiction since the 13th century and remain a common theme in popular culture today. These monsters are said to dwell off the coasts of Norway and Greenland.
+    """,
+    tag_id=lore.id)
+
+  demon= Creature(name='Demon',
+    description="""
+      Demons are servants of Lucifer who follow his agenda as both his emissaries as well as torturers of the souls in Hell. Created from the accumulated misery and darkness born of the destruction of human souls, demons are universally malign and immoral in their actions and dealings.
+
+      Born of torment and anguish, demons are creatures of malice and sadistic glee. Literally incapable of love or compassion, these beasts seduce and manipulate humans to fulfill what they believe is Lucifer's grand agenda. In truth, most demons only serve the will of a demon prince.
+    """,
+    tag_id=lore.id)
+
+  genie= Creature(name='Genie',
+    description="""
+      Genies (traditionally called Djinn) are mythical beings which are deeply rooted in Indian and Islamic religion. They sometimes looking similar to humans, though it is said that they most often appear as wisps of smoke. In many works of fiction, genies are found by mortals to be inhabiting inanimate objects such as bottles or oil lamps. If a human disturbs said object, they will release the genie within. The natures of genies can differ greatly, ranging between benevolent and subservient to vicious and deceiving.
+
+A generalization of genies in many stories is that they become servants to humans that release them from their vessels, using their great magical powers to grant the wishes of whoever they recognize as their masters. However, according to Muslim beliefs, genies have free will, so it seems that it would be up to the genie to decide whether or not to serve a mortal. Many works of fiction do not take the full details of mythology into account, describing genies as only being partially capable of acting on their own, or not at all unless a master releases the genie from his service.
+    """,
+    tag_id=lore.id)
+
+  wraith= Creature(name='Wraith',
+    description="""
+      A wraith is an undead creature whose name originated in Scottish folklore. A type of ghost or spirit, wraiths were traditionally said to be the embodiment of souls who are either on the verge of death, or who have recently passed on.
+
+In modern times, the concept of a wraith is more likely to refer to an evil spirit, particularly one which has unfinished business in the mortal realm. They are typically depicted as skeletal figures draped in tattered rags, and are most commonly associated with graveyards or other haunted locales. The modern perception of a wraith is that of an entity which actively seeks harm to those that it encounters, no matter their motivation.
+    """,
+    tag_id=lore.id)
+
+  kitsune= Creature(name='Kitsune',
+    description="""
+      Kitsune means fox in Japanese and they are commonly known as intelligent beings with mystical powers in Japanese folklore.
+
+      The origin of the kitsune legend is still unknown but is most likely related to this japanese folktale. Ono, who lived in Mino, often spent his time longing for female beauty (a wife). He met her one night on a moor and decided to marry her. Although with the birth of their son, Ono's dog also gave birth. The pup's opinion toward Ono's wife harshened as it grew and one day she begged her husband to kill it (of course he refused). At last one day, the dog had enough and attacked the woman. She then lost all her courage, turned back into a fox, and left. Then Ono cried out to her, "Even though you are a fox, you are the mother of my son and I love you! Come back when you please; you are always welcome."
+
+Every night, she snuck back to Ono's house and slept in his arms.
+
+The reason why that story is the most believable one is because kitsune also means sleep if pronounced kitsu-ne, and always comes if pronounced ki-tsune.
+    """,
+    tag_id=lore.id)
+
+  succubus= Creature(name='Succubus',
+    description="""
+      Succubi in traditional fantasy form may comprise of various sexually appealing forms. From long haired, to lithe and winged. Succubi appear in whatever form is most pleasing to its intended victim. Though they commonly appearing as scantily clad, shapely, winged demons. Previously, Succubi were noted as being horribly disfigured monsters, with monstrous of rows of teeth, 3 sets of breasts and talon-like nails. The descriptions vary from legend to legend.
+
+The origins of Succubi lay steeped in occult mysteries and various sleep disturbances. Victims of 'Succubi' described their visits to the men as 'a feeling of someone sitting on my chest or pelvic area.' and when they awoke, they would feel drained, unable to move and petrified, though having had a wonderful and erotic dream the night before.
+    """,
+    tag_id=lore.id)
+
+  hellhound= Creature(name='HellHound',
+    description="""
+      In Greek, English, and Native American folklore, the Hellhound is commonly seen as an omen of death. If you see it once, you will likely die within the next year, and if you see it three or more times, you're definitely going to die soon. You are more likely to see a Hellhound while traveling at night around a wooded area, as these creatures are nocturnal.
+
+The Hellhound is generally depicted as a large dog—its sizes ranging from that of a mastiff at its smallest to the size of a horse or bear—with a coal black pelt and glowing red or green eyes. They are sometimes depicted as having multiple heads or as being headless. Though the Native American Hellhound, the Cadejo, is said to have a white or black pelt and goat hooves, occasionally including horns in their appearance.
+    """,
+    tag_id=lore.id)
+
+  leviathan= Creature(name='Leviathan',
+    description="""
+      Leviathan is a sea serpent monster of immense size. The leviathan of the Middle Ages was used as an image of Satan, endangering both God's creatures - by attempting to eat them - and God's creation - by threatening it with upheaval in the waters of chaos. As the demon of envy, it's classified as one of the Seven Princes of Hell, corresponding to the seven deadly sins. Leviathan represents the element of water. The element of water in Satanism is associated with life and creation.
+    """,
+    tag_id=lore.id)
+
+  wendigo= Creature(name='Wendigo',
+    description="""
+    The Wendigo—also know as the Windigo, Witigo, Witiko, and Wee-Tee-Go—is a creature from Algonquian myth. The common translation of its names means "the evil spirit that devours mankind," though in 1860 it was translated by a German explorer to mean "cannibal."
+
+Wendigo are known to live in Canada and the United States and seem only to live in cold climates. They've been sighted around the city of Kenora in Ontario, Canada, but throughout the late 1800's and early 1920's, there were sightings of Wendigo around the time of a death in Roseau, Minnesota. Another Wendigo hotspot is supposedly the Cave of the Wendigo, which is near lake Mameigwess in Ontario, Canada.
+
+While the looks of the Wendigo vary between the different Algonquian tribes, most versions of the Wendigo share these traits: glowing eyes, long yellowed fangs, and long tongues. Legends describe them as about 15 feet (or 4.6 meters) tall, and they are commonly described as being thin and emaciated, their skin stretched so tight over their body that you could see all of their bones clearly. In some cases, they are said to have a stag skull head, while in others they have sunken eyes, look skeletal with ashen skin, and have decaying skin.
+    """,
+    tag_id=lore.id)
+
+  goomba= Creature(name='Goomba',
+    description="""
+      As enemies, Goombas are rather pathetic. They aren't very bright and tend to attack enemies simply by charging at them (Let's face it, what else are they going to do?). They are pretty hopeless in battle since they can be defeated with a single stomp on the head, but if there's one thing Goombas have going for them, it's perseverance. It seems that no matter how many of them get flattened by Mario, the Goombas continue marching onward for the glory of Bowser without fear or hesitation. But then again, this lack of self-preservation could simply be a result of the Goombas aforementioned stupidity.
+    """,
+    tag_id=custom.id)
+
+  mimic= Creature(name='Mimic',
+    description="""
+      As a natural survival mechanism, Mimics have developed a unique form of defence: they are able to change the shape of their body in order to mimic that of another species or even an inanimate object, hence their name. The only drawback to this ability is that if they decide to copy something larger than themselves, the copy will be of a proportionally smaller size. However, Mimics are capable of becoming anything from clothing to weaponry to furniture, although they do not possess the ability to reproduce the effects of mechanical equipment.
+
+Once the subject of their mimicry leaves the immediate vicinity, a Mimic will revert to its natural form.
+    """,
+    tag_id=custom.id)
+
+  headcrab= Creature(name='HeadCrab',
+    description="""
+    A typical headcrab is small, about 1 foot in height and 2 feet long. The creature's body is composed of smooth skin with a sickly tan pigmentation. It walks on four segmented legs, though its hind legs are capable of supporting its whole body, allowing it to "tiptoe" as it raises its forelegs when it prepares to pounce at prey. Headcrabs appear to have no eyes (though in the first Half-Life game they apparently have six very tiny eyes) and their fronts end in a set of four mandibles with fangs that inject toxins into the body of a potential host. Whether these toxins merely paralyze a victim or contribute to the zombification process is unknown. The underbelly of a headcrab consists of a gaping mouth containing a small but sharp beak. When a headcrab latches on to a victim's head, this beak burrows into the skull and the creature initiates an as-yet unknown biological process through which it hijacks the victim's body, controlling its motor functions and altering its physiology, causing the victim's fingers to elongate into gangling claws and strengthening muscle tissue to withstand attacks.
+    """,
+    tag_id=custom.id)
+
+  molded= Creature(name='Molded',
+    description="""
+    The Molded are tall, humanoid creatures whose bodies are covered in, if not totally comprised of, a slimy, black, moss-like substance. Beneath the "skin" of the Molded body are multiple reddish veins and ligaments; the arms of the creature end in long, sharp talons for grabbing prey or tearing them apart. The head is misshapen, lacking eyes or a nose and consists primarily of a large mouth filled with jagged fangs.
+
+Molded may be either mutated humans that have been infected and transformed by the Mold, or are completely constructed out of the bacterium by the E-series creator that spawned it. In either case, Molded have flexible and resilient bodies, capable of fitting through tight spaces such as air ducts and can take numerous gunshots before succumbing to injury.
+    """,
+    tag_id=custom.id)
+
+
+
   db.session.add(vampire)
   db.session.add(werewolf)
   db.session.add(ghoul)
@@ -117,6 +321,31 @@ Like Mourning Wood, the later the wave Pumpking is killed in, the more likely it
   db.session.add(shrek)
   db.session.add(ghost)
   db.session.add(pumpking)
+  db.session.add(harpy)
+  db.session.add(merfolk)
+  db.session.add(griffin)
+  db.session.add(chimera)
+  db.session.add(centaur)
+  db.session.add(cerberus)
+  db.session.add(hydra)
+  db.session.add(siren)
+  db.session.add(phoenix)
+  db.session.add(fairy)
+  db.session.add(pegasus)
+  db.session.add(banshee)
+  db.session.add(kraken)
+  db.session.add(demon)
+  db.session.add(genie)
+  db.session.add(wraith)
+  db.session.add(kitsune)
+  db.session.add(succubus)
+  db.session.add(hellhound)
+  db.session.add(leviathan)
+  db.session.add(wendigo)
+  db.session.add(goomba)
+  db.session.add(mimic)
+  db.session.add(headcrab)
+  db.session.add(molded)
 
   db.session.commit()
 
