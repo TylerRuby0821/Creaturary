@@ -2,7 +2,7 @@ from app.models import Creature, db, Userfavorite, User
 
 
 def seed_userfavorites():
-  demo = User.query.filter(User.name == 'Demo').first()
+  demo = User.query.filter(User.username == 'Demo').first()
   creat1 = Creature.query.filter(Creature.name =='Wraith').first()
   creat2 = Creature.query.filter(Creature.name =='Ghost').first()
   creat3 = Creature.query.filter(Creature.name =='Banshee').first()
